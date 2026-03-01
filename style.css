@@ -567,7 +567,7 @@ body {
     border: 1px solid var(--border-glass-light);
     border-radius: var(--radius-xl);
     width: 100%;
-    max-width: 700px;
+    max-width: 1000px;
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
