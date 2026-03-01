@@ -3,40 +3,37 @@
     <circle cx="50" cy="50" r="48" fill="#1e293b"/>
     <circle cx="50" cy="50" r="45" fill="#334155"/>
 
-    <!-- Shoulders/Body - Young/Modern -->
-    <path d="M22 85 Q22 65 37 61 L63 61 Q78 65 78 85" fill="#06b6d4"/>
-    <path d="M27 80 Q27 72 37 70 L63 70 Q73 72 73 80" fill="#22d3ee"/>
+    <!-- Slim Shoulders/Body -->
+    <path d="M25 85 Q25 68 40 63 L60 63 Q75 68 75 85" fill="#06b6d4"/>
+    <path d="M30 80 Q30 74 40 72 L60 72 Q70 74 70 80" fill="#22d3ee"/>
 
     <!-- Neck -->
-    <rect x="42" y="50" width="16" height="15" rx="3" fill="#f0c4a8"/>
+    <rect x="44" y="50" width="12" height="15" rx="3" fill="#f0c4a8"/>
 
-    <!-- Face - Youthful -->
+    <!-- Face -->
     <ellipse cx="50" cy="42" rx="22" ry="26" fill="#f0c4a8"/>
 
-    <!-- Hair - Trendy/Young -->
-    <path d="M26 40 Q26 16 50 12 Q74 16 74 40 Q74 28 50 22 Q26 28 26 40" fill="#8b4513"/>
-    <path d="M28 34 Q28 20 50 18 Q72 20 72 34" fill="#a0522d"/>
+    <!-- Black Hair -->
+    <path d="M26 40 Q26 16 50 12 Q74 16 74 40 Q74 28 50 22 Q26 28 26 40" fill="#000"/>
+    <path d="M28 34 Q28 20 50 18 Q72 20 72 34" fill="#000"/>
 
     <!-- Hair strand -->
-    <path d="M40 20 Q45 16 50 20 Q55 16 60 20" stroke="#a0522d" stroke-width="2" fill="none"/>
+    <path d="M40 20 Q45 16 50 20 Q55 16 60 20" stroke="#000" stroke-width="2" fill="none"/>
 
-    <!-- Eyes - Adaptive/Curious -->
+    <!-- Eyes -->
     <ellipse cx="40" cy="42" rx="4" ry="5" fill="#1e293b"/>
     <ellipse cx="60" cy="42" rx="4" ry="5" fill="#1e293b"/>
     <circle cx="41" cy="41" r="1.5" fill="white"/>
     <circle cx="61" cy="41" r="1.5" fill="white"/>
 
-    <!-- Eyebrows - Youthful -->
-    <path d="M34 36 Q40 34 46 36" stroke="#8b4513" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-    <path d="M54 36 Q60 34 66 36" stroke="#8b4513" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- Eyebrows -->
+    <path d="M34 36 Q40 34 46 36" stroke="#000" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M54 36 Q60 34 66 36" stroke="#000" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 
     <!-- Nose -->
     <path d="M50 45 L48 51 L52 51" stroke="#e0b098" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 
-    <!-- Mouth - Friendly -->
+    <!-- Mouth -->
     <path d="M42 58 Q50 63 58 58" stroke="#c48b7c" stroke-width="2" fill="none" stroke-linecap="round"/>
 
-    <!-- Ear piercing -->
-    <circle cx="26" cy="45" r="2" fill="#22d3ee"/>
-    <circle cx="74" cy="45" r="2" fill="#22d3ee"/>
 </svg>
