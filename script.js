@@ -127,6 +127,20 @@ function setupEventListeners() {
             openScheduleModal(staffId);
         }
     });
+    // Hover lift effect
+staffGrid.addEventListener('mouseover', (e) => {
+    const card = e.target.closest('.staff-card');
+    if (card) {
+        card.style.transform = "translateY(-6px)";
+    }
+});
+
+staffGrid.addEventListener('mouseout', (e) => {
+    const card = e.target.closest('.staff-card');
+    if (card) {
+        card.style.transform = "";
+    }
+});
 
     // Modal close
     modalClose.addEventListener('click', closeModal);
