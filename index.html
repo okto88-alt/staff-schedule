@@ -6,11 +6,11 @@
     <title>Staff Monthly Schedule Panel</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="ambient-glow"></div>
+    <div class="page-background"></div>
     <div class="app-container">
         <header class="main-header">
             <div class="header-content">
@@ -20,7 +20,7 @@
                             <rect width="40" height="40" rx="10" fill="url(#logoGrad)"/>
                             <path d="M12 20C12 16.6863 14.6863 14 18 14C21.3137 14 24 16.6863 24 20C24 23.3137 21.3137 26 18 26" stroke="white" stroke-width="2" stroke-linecap="round"/>
                             <path d="M18 14V26M14 20H22" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                            <circle cx="28" cy="12" r="6" fill="#a855f7"/>
+                            <circle cx="28" cy="12" r="6" fill="#8b5cf6"/>
                             <path d="M25 12L27 14L30 10" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             <defs>
                                 <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
@@ -31,8 +31,8 @@
                         </svg>
                     </div>
                     <div class="title-group">
-                        <h1>Staff Schedule Dashboard</h1>
-                        <p class="subtitle">Monthly shift management system</p>
+                        <h1>Staff Schedule</h1>
+                        <p class="subtitle">Team shift management</p>
                     </div>
                 </div>
                 <div class="header-meta" id="scheduleMeta">
@@ -42,13 +42,14 @@
         </header>
 
         <main class="main-content">
+            <!-- Staff Grid Container -->
             <div class="staff-grid" id="staffGrid">
                 <!-- Staff cards will be dynamically inserted here -->
             </div>
         </main>
 
         <footer class="main-footer">
-            <p>Click on any staff member to view their complete monthly schedule</p>
+            <p>Click on any team member to view their complete monthly schedule</p>
         </footer>
     </div>
 
@@ -100,6 +101,126 @@
     </div>
 
     <script src="script.js"></script>
+
+<script>
+/**
+ * Iframe element highlighting injection script
+ */
+(function () {
+  "use strict";
+  if (window.self === window.top) { return; }
+  if (window.__iframeHighlightInitialized) { return; }
+  window.__iframeHighlightInitialized = true;
+
+  var overlay = document.createElement("div");
+  overlay.id = "iframe-highlight-overlay";
+  overlay.style.cssText = "position:fixed;inset:0;pointer-events:none;z-index:999999;overflow:hidden;";
+
+  var highlightBox = document.createElement("div");
+  highlightBox.id = "iframe-highlight-box";
+  highlightBox.style.cssText = "position:absolute;border:2px dashed #007AFF;background:rgba(0,122,255,0.08);pointer-events:none;display:none;transition:all 0.1s ease;box-shadow:0 0 0 1px rgba(255,255,255,0.8);border-radius:2px;";
+
+  var selectedBox = document.createElement("div");
+  selectedBox.id = "iframe-selected-box";
+  selectedBox.style.cssText = "position:absolute;border:2px solid #007AFF;pointer-events:none;display:none;box-shadow:0 0 0 1px rgba(255,255,255,0.9),0 0 8px rgba(255,107,53,0.4);border-radius:2px;z-index:1000000;";
+
+  var tagLabel = document.createElement("div");
+  tagLabel.id = "iframe-tag-label";
+  tagLabel.style.cssText = "position:absolute;background:#007AFF;color:white;padding:2px 6px;font-size:11px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;border-radius:2px;pointer-events:none;display:none;white-space:nowrap;z-index:1000001;box-shadow:0 2px 4px rgba(0,0,0,0.3);font-weight:500;";
+
+  var selectedLabel = document.createElement("div");
+  selectedLabel.id = "iframe-selected-label";
+  selectedLabel.style.cssText = "position:absolute;background:#007AFF;color:white;padding:3px 8px;font-size:11px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;border-radius:3px;pointer-events:none;display:none;white-space:nowrap;z-index:1000002;box-shadow:0 2px 6px rgba(0,0,0,0.4);font-weight:600;";
+
+  overlay.appendChild(highlightBox);
+  overlay.appendChild(selectedBox);
+  overlay.appendChild(tagLabel);
+  overlay.appendChild(selectedLabel);
+  document.body.appendChild(overlay);
+
+  var selectedElement = null;
+  var highlightEnabled = false;
+
+  function updateSelectedHighlight(element) {
+    if (!element) {
+      selectedBox.style.display = "none";
+      selectedLabel.style.display = "none";
+      selectedElement = null;
+      return;
+    }
+    selectedElement = element;
+    var rect = element.getBoundingClientRect();
+    selectedBox.style.display = "block";
+    selectedBox.style.left = (rect.left - 2) + "px";
+    selectedBox.style.top = (rect.top - 2) + "px";
+    selectedBox.style.width = (rect.width + 4) + "px";
+    selectedBox.style.height = (rect.height + 4) + "px";
+    selectedLabel.style.display = "block";
+    selectedLabel.textContent = "✓ <" + element.tagName.toLowerCase() + ">";
+    var labelTop = rect.top - 28;
+    var labelLeft = rect.left;
+    if (labelTop < 5) { labelTop = rect.bottom + 5; }
+    var labelWidth = selectedLabel.offsetWidth || 100;
+    if (labelLeft + labelWidth > window.innerWidth - 10) { labelLeft = window.innerWidth - labelWidth - 10; }
+    selectedLabel.style.left = Math.max(5, labelLeft) + "px";
+    selectedLabel.style.top = labelTop + "px";
+  }
+
+  function handleMouseOver(e) {
+    if (!highlightEnabled) return;
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) return;
+    if (target === document.documentElement || target === document.body) return;
+    if (target === selectedElement) { highlightBox.style.display = "none"; tagLabel.style.display = "none"; return; }
+    var rect = target.getBoundingClientRect();
+    highlightBox.style.display = "block";
+    highlightBox.style.left = (rect.left - 2) + "px";
+    highlightBox.style.top = (rect.top - 2) + "px";
+    highlightBox.style.width = (rect.width + 4) + "px";
+    highlightBox.style.height = (rect.height + 4) + "px";
+    tagLabel.style.display = "block";
+    tagLabel.textContent = "<" + target.tagName.toLowerCase() + ">";
+    var labelTop = rect.top - 22;
+    var labelLeft = rect.left;
+    if (labelTop < 0) { labelTop = rect.bottom + 5; }
+    if (labelLeft + tagLabel.offsetWidth > window.innerWidth) { labelLeft = window.innerWidth - tagLabel.offsetWidth - 5; }
+    tagLabel.style.left = Math.max(0, labelLeft) + "px";
+    tagLabel.style.top = labelTop + "px";
+  }
+
+  function handleMouseOut(e) {
+    if (!highlightEnabled) return;
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+  }
+
+  function handleClick(e) {
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) return;
+    if (target === document.documentElement || target === document.body) return;
+    if (highlightEnabled) { e.preventDefault(); e.stopPropagation(); }
+    updateSelectedHighlight(target);
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+  }
+
+  function enableHighlight() {
+    document.addEventListener("mouseover", handleMouseOver, true);
+    document.addEventListener("mouseout", handleMouseOut, true);
+    document.addEventListener("click", handleClick, true);
+    highlightEnabled = true;
+    overlay.style.display = "block";
+  }
+
+  function disableHighlight() {
+    highlightEnabled = false;
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+  }
+
+  enableHighlight();
+})();
+</script>
 
 <script>
 /**
