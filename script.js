@@ -82,11 +82,24 @@ function getRoleText(role, roleCode) {
 function renderStaffGrid() {
     if (!scheduleData || !scheduleData.staff) return;
 
-    staffGrid.innerHTML = scheduleData.staff.map(staff => {
+    // Priority Role Sorting
+    const rolePriority = {
+        "L": 1,
+        "AL": 2,
+        "": 3
+    };
+
+    const sortedStaff = [...scheduleData.staff].sort((a, b) => {
+        const roleDiff = rolePriority[a.roleCode] - rolePriority[b.roleCode];
+        if (roleDiff !== 0) return roleDiff;
+
+        // Secondary sort by name
+        return a.name.localeCompare(b.name);
+    });
+
+    staffGrid.innerHTML = sortedStaff.map(staff => {
         const roleClass = getRoleClass(staff.roleCode);
         const roleText = getRoleText(staff.role, staff.roleCode);
-        const roleLabel = staff.roleCode === 'L' ? 'Leader' :
-                         staff.roleCode === 'AL' ? 'Asst. Leader' : 'Staff';
 
         return `
             <div class="staff-card ${roleClass}" data-staff-id="${staff.id}">
