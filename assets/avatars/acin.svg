@@ -3,35 +3,35 @@
     <circle cx="50" cy="50" r="48" fill="#1e293b"/>
     <circle cx="50" cy="50" r="45" fill="#334155"/>
 
-    <!-- Shoulders/Body -->
-    <path d="M20 85 Q20 65 35 60 L65 60 Q80 65 80 85" fill="#a855f7"/>
-    <path d="M25 80 Q25 70 35 68 L65 68 Q75 70 75 80" fill="#c084fc"/>
+    <!-- BIGGER Shoulders/Body -->
+    <path d="M15 85 Q15 60 35 55 L65 55 Q85 60 85 85" fill="#a855f7"/>
+    <path d="M20 80 Q20 68 35 65 L65 65 Q80 68 80 80" fill="#c084fc"/>
 
-    <!-- Neck -->
-    <rect x="42" y="50" width="16" height="15" rx="3" fill="#fdb5a4"/>
+    <!-- Thicker Neck -->
+    <rect x="40" y="50" width="20" height="17" rx="5" fill="#fdb5a4"/>
 
-    <!-- Face -->
-    <ellipse cx="50" cy="42" rx="22" ry="26" fill="#fdb5a4"/>
+    <!-- Fuller Face -->
+    <ellipse cx="50" cy="42" rx="25" ry="28" fill="#fdb5a4"/>
 
-    <!-- Hair - Confident slick back -->
-    <path d="M28 35 Q28 15 50 12 Q72 15 72 35 Q72 25 50 22 Q28 25 28 35" fill="#1a1a2e"/>
-    <path d="M30 30 Q30 20 50 18 Q70 20 70 30" fill="#2d2d44"/>
+    <!-- Hair -->
+    <path d="M25 35 Q25 12 50 10 Q75 12 75 35 Q75 22 50 20 Q25 22 25 35" fill="#1a1a2e"/>
+    <path d="M28 30 Q28 18 50 16 Q72 18 72 30" fill="#2d2d44"/>
 
-    <!-- Eyes - Confident look -->
-    <ellipse cx="40" cy="42" rx="4" ry="5" fill="#1e293b"/>
-    <ellipse cx="60" cy="42" rx="4" ry="5" fill="#1e293b"/>
-    <circle cx="41" cy="41" r="1.5" fill="white"/>
-    <circle cx="61" cy="41" r="1.5" fill="white"/>
+    <!-- Eyes -->
+    <ellipse cx="40" cy="44" rx="4" ry="4.5" fill="#1e293b"/>
+    <ellipse cx="60" cy="44" rx="4" ry="4.5" fill="#1e293b"/>
+    <circle cx="41" cy="43" r="1.5" fill="white"/>
+    <circle cx="61" cy="43" r="1.5" fill="white"/>
 
-    <!-- Eyebrows - Confident/neutral -->
-    <path d="M35 35 Q40 33 45 35" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/>
-    <path d="M55 35 Q60 33 65 35" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Eyebrows -->
+    <path d="M34 36 Q40 34 46 36" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M54 36 Q60 34 66 36" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/>
 
     <!-- Nose -->
-    <path d="M50 45 L48 52 L52 52" stroke="#e8a690" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M50 47 L48 54 L52 54" stroke="#e8a690" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 
-    <!-- Mouth - Confident smile -->
-    <path d="M42 58 Q50 64 58 58" stroke="#b85c5c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Mouth -->
+    <path d="M40 60 Q50 66 60 60" stroke="#b85c5c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
 
     <!-- Leader Badge -->
     <circle cx="75" cy="25" r="12" fill="#a855f7"/>
