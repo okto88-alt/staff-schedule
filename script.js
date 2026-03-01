@@ -185,6 +185,9 @@ function openScheduleModal(staffId) {
     modalAvatar.innerHTML = `<img src="${staff.avatar}" alt="${staff.name}">`;
     modalName.textContent = staff.name;
 
+    const fullImg = document.getElementById("modalFullCharacter");
+    fullImg.src = fullCharacterMap[staff.name] || staff.avatar;
+    
     // Update role badge
     const roleClass = getRoleClass(staff.roleCode);
     const roleText = getRoleText(staff.role, staff.roleCode);
