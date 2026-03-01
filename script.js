@@ -27,6 +27,8 @@ const fullCharacterMap = {
     "HADAD": "assets/characters/hadad.png",
     "HEWIN": "assets/characters/hewin.png",
     "LISTANI": "assets/characters/listani.png",
+    "WILLY MEDAN": "assets/characters/wilmed.png",
+    "WILLY PONTIANAK": "assets/characters/wilpon.png",
     "NIBRAS": "assets/characters/nibras.png",
     "RIAN": "assets/characters/rian.png",
     "WENDI": "assets/characters/wendi.png",
