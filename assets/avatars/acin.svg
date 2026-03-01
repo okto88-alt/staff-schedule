@@ -33,6 +33,17 @@
     <!-- Mouth -->
     <path d="M40 60 Q50 66 60 60" stroke="#b85c5c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
 
+    <!-- Pizza Slice -->
+    <g transform="translate(70,70) scale(0.7)">
+        <!-- Crust -->
+        <path d="M10 0 L20 18 Q10 22 0 18 Z" fill="#f59e0b"/>
+        <!-- Cheese -->
+        <path d="M10 2 L18 16 Q10 20 2 16 Z" fill="#fde68a"/>
+        <!-- Pepperoni -->
+        <circle cx="8" cy="10" r="2" fill="#dc2626"/>
+        <circle cx="13" cy="13" r="2" fill="#dc2626"/>
+    </g>
+
     <!-- Leader Badge -->
     <circle cx="75" cy="25" r="12" fill="#a855f7"/>
     <text x="75" y="29" text-anchor="middle" fill="white" font-size="10" font-weight="bold">L</text>
