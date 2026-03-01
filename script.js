@@ -29,6 +29,7 @@ const fullCharacterMap = {
     "LISTANI": "assets/characters/listani.png",
     "NIBRAS": "assets/characters/nibras.png",
     "RIAN": "assets/characters/rian.png",
+    "WENDI": "assets/characters/wendi.png",
     "RIANTO": "assets/characters/rianto.png"
 };
 /**
