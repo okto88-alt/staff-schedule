@@ -1,143 +1,141 @@
 {
-  "meta": {
-    "month": "March",
-    "year": "2026"
-  },
+  "month": "March 2026",
   "staff": [
+
     {
       "id": "acin",
       "name": "ACIN",
       "role": "Leader",
       "roleCode": "L",
-      "personality": "Confident leader",
       "avatar": "assets/avatars/acin.svg",
-      "schedule": ["P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M"]
+      "schedule": ["P","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","P"]
     },
+
     {
       "id": "hari",
       "name": "HARI",
       "role": "Assistant Leader",
       "roleCode": "AL",
-      "personality": "Strategic support",
       "avatar": "assets/avatars/hari.svg",
-      "schedule": ["M","OFF","P","P","M","M","OFF","P","P","M","OFF","P","P","M","M","OFF","P","P","M","OFF","P","P","M","M","OFF","P","P","M","OFF","P","P"]
+      "schedule": ["P","P","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","OFF","P"]
     },
+
     {
       "id": "wendi",
       "name": "WENDI",
       "role": "Staff",
       "roleCode": "",
-      "personality": "Technical vibe",
       "avatar": "assets/avatars/wendi.svg",
-      "schedule": ["P","P","P","M","OFF","P","P","P","M","OFF","P","P","P","M","OFF","P","P","P","M","OFF","P","P","P","M","OFF","P","P","P","M","OFF","P"]
+      "schedule": ["M","M","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P"]
     },
+
     {
       "id": "listani",
       "name": "LISTANI",
       "role": "Staff",
       "roleCode": "",
-      "personality": "Calm admin",
       "avatar": "assets/avatars/listani.svg",
-      "schedule": ["OFF","P","P","M","P","P","M","OFF","P","P","M","P","P","M","OFF","P","P","M","P","P","M","OFF","P","P","M","P","P","M","OFF","P","P"]
+      "schedule": ["OFF","P","P","P","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P"]
     },
+
     {
-      "id": "deavalda",
+      "id": "dea",
       "name": "DEA VALDA",
       "role": "Staff",
       "roleCode": "",
-      "personality": "Energetic",
-      "avatar": "assets/avatars/deavalda.svg",
-      "schedule": ["P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M"]
+      "avatar": "assets/avatars/dea.svg",
+      "schedule": ["P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P"]
     },
+
     {
-      "id": "willymedan",
+      "id": "willy_medan",
       "name": "WILLY MEDAN",
       "role": "Staff",
       "roleCode": "",
-      "personality": "Strong",
-      "avatar": "assets/avatars/willymedan.svg",
-      "schedule": ["M","M","P","P","OFF","M","M","P","P","OFF","M","M","P","P","OFF","M","M","P","P","OFF","M","M","P","P","OFF","M","M","P","P","OFF","M"]
+      "avatar": "assets/avatars/willy_medan.svg",
+      "schedule": ["P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P"]
     },
+
     {
-      "id": "willypontianak",
+      "id": "willy_ptk",
       "name": "WILLY PONTIANAK",
       "role": "Staff",
       "roleCode": "",
-      "personality": "Relaxed",
-      "avatar": "assets/avatars/willypontianak.svg",
-      "schedule": ["P","OFF","M","M","P","P","OFF","M","M","P","P","OFF","M","M","P","P","OFF","M","M","P","P","OFF","M","M","P","P","OFF","M","M","P","P"]
+      "avatar": "assets/avatars/willy_ptk.svg",
+      "schedule": ["P","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF"]
     },
+
     {
       "id": "herman",
       "name": "HERMAN",
       "role": "Leader",
       "roleCode": "L",
-      "personality": "Senior leader",
       "avatar": "assets/avatars/herman.svg",
-      "schedule": ["P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M"]
+      "schedule": ["M","M","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","OFF","M"]
     },
+
     {
       "id": "david",
       "name": "DAVID",
       "role": "Assistant Leader",
       "roleCode": "AL",
-      "personality": "Tactical",
       "avatar": "assets/avatars/david.svg",
-      "schedule": ["M","OFF","P","P","M","M","OFF","P","P","M","OFF","P","P","M","M","OFF","P","P","M","OFF","P","P","M","M","OFF","P","P","M","OFF","P","P"]
+      "schedule": ["OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","OFF","M","M"]
     },
+
     {
       "id": "hadad",
       "name": "HADAD",
       "role": "Staff",
       "roleCode": "",
-      "personality": "Focused",
       "avatar": "assets/avatars/hadad.svg",
-      "schedule": ["P","P","P","M","OFF","P","P","P","M","OFF","P","P","P","M","OFF","P","P","P","M","OFF","P","P","P","M","OFF","P","P","P","M","OFF","P"]
+      "schedule": ["M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M"]
     },
+
     {
       "id": "rianto",
       "name": "RIANTO",
       "role": "Staff",
       "roleCode": "",
-      "personality": "Disciplined",
       "avatar": "assets/avatars/rianto.svg",
-      "schedule": ["OFF","P","P","M","P","P","M","OFF","P","P","M","P","P","M","OFF","P","P","M","P","P","M","OFF","P","P","M","P","P","M","OFF","P","P"]
+      "schedule": ["M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M"]
     },
+
     {
       "id": "hewin",
       "name": "HEWIN",
       "role": "Staff",
       "roleCode": "",
-      "personality": "Fast",
       "avatar": "assets/avatars/hewin.svg",
-      "schedule": ["P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M"]
+      "schedule": ["M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M"]
     },
+
     {
       "id": "rian",
       "name": "RIAN",
       "role": "Staff",
       "roleCode": "",
-      "personality": "Young adaptive",
       "avatar": "assets/avatars/rian.svg",
-      "schedule": ["M","M","P","P","OFF","M","M","P","P","OFF","M","M","P","P","OFF","M","M","P","P","OFF","M","M","P","P","OFF","M","M","P","P","OFF","M"]
+      "schedule": ["P","P","P","M","M","OFF","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M"]
     },
+
     {
       "id": "nibras",
       "name": "NIBRAS",
       "role": "Staff",
       "roleCode": "",
-      "personality": "Analytical",
       "avatar": "assets/avatars/nibras.svg",
-      "schedule": ["P","OFF","M","M","P","P","OFF","M","M","P","P","OFF","M","M","P","P","OFF","M","M","P","P","OFF","M","M","P","P","OFF","M","M","P","P"]
+      "schedule": ["M","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF"]
     },
+
     {
       "id": "budi",
       "name": "BUDI",
       "role": "Staff",
       "roleCode": "",
-      "personality": "Reliable",
       "avatar": "assets/avatars/budi.svg",
-      "schedule": ["P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M","OFF","P","P","M"]
+      "schedule": ["M","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","L","L","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M"]
     }
+
   ]
 }
