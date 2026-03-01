@@ -8,7 +8,7 @@
       "role": "Leader",
       "roleCode": "L",
       "avatar": "assets/avatars/acin.svg",
-      "schedule": ["P","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","P"]
+      "schedule": ["P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P"]
     },
 
     {
@@ -17,7 +17,7 @@
       "role": "Assistant Leader",
       "roleCode": "AL",
       "avatar": "assets/avatars/hari.svg",
-      "schedule": ["P","P","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","OFF","P"]
+      "schedule": ["P","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P"]
     },
 
     {
@@ -26,7 +26,7 @@
       "role": "Staff",
       "roleCode": "",
       "avatar": "assets/avatars/wendi.svg",
-      "schedule": ["M","M","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P"]
+      "schedule": ["M","M","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","P"]
     },
 
     {
@@ -35,7 +35,7 @@
       "role": "Staff",
       "roleCode": "",
       "avatar": "assets/avatars/listani.svg",
-      "schedule": ["OFF","P","P","P","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P"]
+      "schedule": ["OFF","P","P","P","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P"]
     },
 
     {
@@ -44,7 +44,7 @@
       "role": "Staff",
       "roleCode": "",
       "avatar": "assets/avatars/dea.svg",
-      "schedule": ["P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P"]
+      "schedule": ["P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P"]
     },
 
     {
@@ -53,7 +53,7 @@
       "role": "Staff",
       "roleCode": "",
       "avatar": "assets/avatars/willy_medan.svg",
-      "schedule": ["P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P"]
+      "schedule": ["P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P"]
     },
 
     {
@@ -62,7 +62,7 @@
       "role": "Staff",
       "roleCode": "",
       "avatar": "assets/avatars/willy_ptk.svg",
-      "schedule": ["P","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF","P","P","P","P","P","OFF"]
+      "schedule": ["P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","P","P","OFF","P"]
     },
 
     {
@@ -71,7 +71,7 @@
       "role": "Leader",
       "roleCode": "L",
       "avatar": "assets/avatars/herman.svg",
-      "schedule": ["M","M","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","OFF","M"]
+      "schedule": ["M","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M"]
     },
 
     {
@@ -80,7 +80,7 @@
       "role": "Assistant Leader",
       "roleCode": "AL",
       "avatar": "assets/avatars/david.svg",
-      "schedule": ["OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","OFF","M","M"]
+      "schedule": ["OFF","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M"]
     },
 
     {
@@ -89,7 +89,7 @@
       "role": "Staff",
       "roleCode": "",
       "avatar": "assets/avatars/hadad.svg",
-      "schedule": ["M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M"]
+      "schedule": ["M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M","M","M"]
     },
 
     {
@@ -98,7 +98,7 @@
       "role": "Staff",
       "roleCode": "",
       "avatar": "assets/avatars/rianto.svg",
-      "schedule": ["M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M"]
+      "schedule": ["M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M","M"]
     },
 
     {
@@ -107,7 +107,7 @@
       "role": "Staff",
       "roleCode": "",
       "avatar": "assets/avatars/hewin.svg",
-      "schedule": ["M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M"]
+      "schedule": ["M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M"]
     },
 
     {
@@ -116,7 +116,7 @@
       "role": "Staff",
       "roleCode": "",
       "avatar": "assets/avatars/rian.svg",
-      "schedule": ["P","P","P","M","M","OFF","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M"]
+      "schedule": ["P","P","P","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M"]
     },
 
     {
@@ -125,7 +125,7 @@
       "role": "Staff",
       "roleCode": "",
       "avatar": "assets/avatars/nibras.svg",
-      "schedule": ["M","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M","M","OFF"]
+      "schedule": ["M","M","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M"]
     },
 
     {
@@ -134,7 +134,7 @@
       "role": "Staff",
       "roleCode": "",
       "avatar": "assets/avatars/budi.svg",
-      "schedule": ["M","M","M","M","M","M","OFF","M","M","M","M","M","OFF","M","M","M","L","L","M","M","OFF","M","M","M","M","M","OFF","M","M","M","M"]
+      "schedule": ["M","M","M","M","M","M","M","OFF","M","M","M","M","M","M","OFF","M","M","M","L","L","M","OFF","M","M","M","M","M","M","OFF","M","M"]
     }
 
   ]
