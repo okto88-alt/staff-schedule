@@ -1024,3 +1024,28 @@ body {
     0%,100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
 }
+/* ===== WEEKDAY HEADER ===== */
+
+.calendar-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    padding: 0 4px;
+}
+
+.calendar-weekdays span {
+    padding: 4px 0;
+}
+.calendar-weekdays span:nth-child(1),
+.calendar-weekdays span:nth-child(7) {
+    color: #ef4444;
+}
