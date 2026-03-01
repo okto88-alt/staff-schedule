@@ -17,6 +17,20 @@ const modalRole = document.getElementById('modalRole');
 const modalPersonality = document.getElementById('modalPersonality');
 const calendarGrid = document.getElementById('calendarGrid');
 
+const fullCharacterMap = {
+    "ACIN": "assets/characters/acin.png",
+    "HERMAN": "assets/characters/herman.png",
+    "DAVID": "assets/characters/david.png",
+    "HARI": "assets/characters/hari.png",
+    "BUDI": "assets/characters/budi.png",
+    "DEA VALDA": "assets/characters/dea.png",
+    "HADAD": "assets/characters/hadad.png",
+    "HEWIN": "assets/characters/hewin.png",
+    "LISTANI": "assets/characters/listani.png",
+    "NIBRAS": "assets/characters/nibras.png",
+    "RIAN": "assets/characters/rian.png",
+    "RIANTO": "assets/characters/rianto.png"
+};
 /**
  * Initialize the application
  */
