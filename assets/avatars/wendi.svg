@@ -1,0 +1,40 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="50" cy="50" r="48" fill="#1e293b"/>
+    <circle cx="50" cy="50" r="45" fill="#334155"/>
+
+    <!-- Shoulders/Body - Technical/hoodie -->
+    <path d="M20 85 Q20 65 35 60 L65 60 Q80 65 80 85" fill="#0891b2"/>
+    <path d="M25 80 Q25 70 35 68 L65 68 Q75 70 75 80" fill="#06b6d4"/>
+
+    <!-- Neck -->
+    <rect x="42" y="50" width="16" height="15" rx="3" fill="#ddb89e"/>
+
+    <!-- Face -->
+    <ellipse cx="50" cy="42" rx="22" ry="26" fill="#ddb89e"/>
+
+    <!-- Hair - Techy/messy -->
+    <path d="M26 40 Q26 16 50 12 Q74 16 74 40 Q74 28 50 22 Q26 28 26 40" fill="#2d2d2d"/>
+    <path d="M28 35 Q28 20 50 18 Q72 20 72 35" fill="#404040"/>
+
+    <!-- Eyes - Focused -->
+    <ellipse cx="40" cy="42" rx="4" ry="5" fill="#1e293b"/>
+    <ellipse cx="60" cy="42" rx="4" ry="5" fill="#1e293b"/>
+    <circle cx="41" cy="41" r="1.5" fill="white"/>
+    <circle cx="61" cy="41" r="1.5" fill="white"/>
+
+    <!-- Eyebrows - Focused -->
+    <path d="M35 36 Q40 34 45 36" stroke="#2d2d2d" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M55 36 Q60 34 65 36" stroke="#2d2d2d" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <path d="M50 45 L48 51 L52 51" stroke="#c9a080" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Mouth - Neutral -->
+    <path d="M43 58 Q50 60 57 58" stroke="#a86c5c" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Headphones -->
+    <rect x="18" y="30" width="8" height="25" rx="2" fill="#404040"/>
+    <rect x="74" y="30" width="8" height="25" rx="2" fill="#404040"/>
+    <path d="M22 30 Q22 25 26 25 L74 25 Q78 25 78 30" stroke="#404040" stroke-width="3" fill="none"/>
+</svg>

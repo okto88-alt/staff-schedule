@@ -1,0 +1,42 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="50" cy="50" r="48" fill="#1e293b"/>
+    <circle cx="50" cy="50" r="45" fill="#334155"/>
+
+    <!-- Shoulders/Body - Reliable -->
+    <path d="M18 85 Q18 62 35 58 L65 58 Q82 62 82 85" fill="#64748b"/>
+    <path d="M23 80 Q23 70 35 68 L65 68 Q77 70 77 80" fill="#94a3b8"/>
+
+    <!-- Neck -->
+    <rect x="42" y="48" width="16" height="17" rx="3" fill="#e8b89e"/>
+
+    <!-- Face - Reliable/Trustworthy -->
+    <ellipse cx="50" cy="42" rx="22" ry="26" fill="#e8b89e"/>
+
+    <!-- Hair - Reliable/Neat -->
+    <path d="M28 38 Q28 18 50 14 Q72 18 72 38 Q72 26 50 22 Q28 26 28 38" fill="#4a3728"/>
+    <path d="M30 32 Q30 22 50 20 Q70 22 70 32" fill="#6b5344"/>
+
+    <!-- Hair wave -->
+    <path d="M35 28 Q42 24 50 28 Q58 24 65 28" stroke="#6b5344" stroke-width="1.5" fill="none"/>
+
+    <!-- Eyes - Trustworthy -->
+    <ellipse cx="40" cy="42" rx="4" ry="5" fill="#1e293b"/>
+    <ellipse cx="60" cy="42" rx="4" ry="5" fill="#1e293b"/>
+    <circle cx="41" cy="41" r="1.5" fill="white"/>
+    <circle cx="61" cy="41" r="1.5" fill="white"/>
+
+    <!-- Eyebrows - Warm -->
+    <path d="M34 35 Q40 33 46 35" stroke="#4a3728" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M54 35 Q60 33 66 35" stroke="#4a3728" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <path d="M50 45 L47 52 L53 52" stroke="#d4a088" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Mouth - Warm smile -->
+    <path d="M40 58 Q50 64 60 58" stroke="#b87870" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Laugh lines -->
+    <path d="M35 55 Q38 57 35 60" stroke="#d4a088" stroke-width="1" fill="none" opacity="0.5"/>
+    <path d="M65 55 Q62 57 65 60" stroke="#d4a088" stroke-width="1" fill="none" opacity="0.5"/>
+</svg>

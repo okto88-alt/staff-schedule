@@ -1,0 +1,38 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="50" cy="50" r="48" fill="#1e293b"/>
+    <circle cx="50" cy="50" r="45" fill="#334155"/>
+
+    <!-- Shoulders/Body - Focused -->
+    <path d="M20 85 Q20 65 35 61 L65 61 Q80 65 80 85" fill="#ea580c"/>
+    <path d="M25 80 Q25 70 35 68 L65 68 Q75 70 75 80" fill="#f97316"/>
+
+    <!-- Neck -->
+    <rect x="42" y="50" width="16" height="15" rx="3" fill="#dca888"/>
+
+    <!-- Face -->
+    <ellipse cx="50" cy="42" rx="22" ry="26" fill="#dca888"/>
+
+    <!-- Hair - Sharp/Focused -->
+    <path d="M28 38 Q28 16 50 12 Q72 16 72 38 Q72 26 50 20 Q28 26 28 38" fill="#3d2314"/>
+    <path d="M30 32 Q30 20 50 18 Q70 20 70 32" fill="#5c3a1e"/>
+
+    <!-- Eyes - Intense/Focused -->
+    <ellipse cx="40" cy="42" rx="4" ry="5" fill="#1e293b"/>
+    <ellipse cx="60" cy="42" rx="4" ry="5" fill="#1e293b"/>
+    <circle cx="41" cy="41" r="1.5" fill="white"/>
+    <circle cx="61" cy="41" r="1.5" fill="white"/>
+
+    <!-- Eyebrows - Intense -->
+    <path d="M34 34 Q40 30 46 34" stroke="#3d2314" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M54 34 Q60 30 66 34" stroke="#3d2314" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <path d="M50 44 L47 51 L53 51" stroke="#c89878" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Mouth - Focused -->
+    <path d="M43 58 Q50 56 57 58" stroke="#a86c5c" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Focus indicator -->
+    <circle cx="50" cy="68" r="3" fill="#ea580c" opacity="0.6"/>
+</svg>

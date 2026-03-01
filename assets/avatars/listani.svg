@@ -1,0 +1,41 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="50" cy="50" r="48" fill="#1e293b"/>
+    <circle cx="50" cy="50" r="45" fill="#334155"/>
+
+    <!-- Shoulders/Body - Professional -->
+    <path d="M20 85 Q20 65 35 60 L65 60 Q80 65 80 85" fill="#8b5cf6"/>
+    <path d="M25 80 Q25 70 35 68 L65 68 Q75 70 75 80" fill="#a78bfa"/>
+
+    <!-- Neck -->
+    <rect x="42" y="50" width="16" height="15" rx="3" fill="#f5d0c5"/>
+
+    <!-- Face -->
+    <ellipse cx="50" cy="42" rx="22" ry="26" fill="#f5d0c5"/>
+
+    <!-- Hair - Calm/neat bun -->
+    <path d="M28 38 Q28 18 50 14 Q72 18 72 38" fill="#5c4033"/>
+    <circle cx="50" cy="18" r="10" fill="#5c4033"/>
+    <circle cx="50" cy="18" r="7" fill="#7a5a45"/>
+
+    <!-- Eyes - Calm -->
+    <ellipse cx="40" cy="42" rx="4" ry="5" fill="#1e293b"/>
+    <ellipse cx="60" cy="42" rx="4" ry="5" fill="#1e293b"/>
+    <circle cx="41" cy="41" r="1.5" fill="white"/>
+    <circle cx="61" cy="41" r="1.5" fill="white"/>
+
+    <!-- Eyebrows - Gentle -->
+    <path d="M35 36 Q40 34 45 36" stroke="#5c4033" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M55 36 Q60 34 65 36" stroke="#5c4033" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <path d="M50 45 L48 51 L52 51" stroke="#e0b8a8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Mouth - Gentle smile -->
+    <path d="M43 58 Q50 62 57 58" stroke="#c48b80" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Glasses -->
+    <circle cx="40" cy="43" r="7" stroke="#8b5cf6" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <circle cx="60" cy="43" r="7" stroke="#8b5cf6" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M47 43 L53 43" stroke="#8b5cf6" stroke-width="1.5" opacity="0.6"/>
+</svg>

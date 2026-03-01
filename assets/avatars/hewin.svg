@@ -1,0 +1,39 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="50" cy="50" r="48" fill="#1e293b"/>
+    <circle cx="50" cy="50" r="45" fill="#334155"/>
+
+    <!-- Shoulders/Body - Fast/Energetic -->
+    <path d="M20 85 Q20 65 35 61 L65 61 Q80 65 80 85" fill="#eab308"/>
+    <path d="M25 80 Q25 70 35 68 L65 68 Q75 70 75 80" fill="#facc15"/>
+
+    <!-- Neck -->
+    <rect x="42" y="50" width="16" height="15" rx="3" fill="#f5c4a0"/>
+
+    <!-- Face -->
+    <ellipse cx="50" cy="42" rx="22" ry="26" fill="#f5c4a0"/>
+
+    <!-- Hair - Spiky/Fast -->
+    <path d="M24 42 L28 30 L32 38 L36 26 L42 36 L50 22 L58 36 L64 26 L68 38 L72 30 L76 42 Q50 32 24 42" fill="#1a1a2e"/>
+    <path d="M28 38 L32 28 L36 36 L42 24 L50 18 L58 24 L64 36 L68 28 L72 38" fill="#2d2d44"/>
+
+    <!-- Eyes - Bright/Fast -->
+    <ellipse cx="40" cy="44" rx="4" ry="5" fill="#1e293b"/>
+    <ellipse cx="60" cy="44" rx="4" ry="5" fill="#1e293b"/>
+    <circle cx="42" cy="43" r="2" fill="white"/>
+    <circle cx="62" cy="43" r="2" fill="white"/>
+
+    <!-- Eyebrows - Energetic -->
+    <path d="M34 38 Q40 35 46 38" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M54 38 Q60 35 66 38" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <path d="M50 47 L47 53 L53 53" stroke="#e0a888" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Mouth - Energetic smile -->
+    <path d="M40 59 Q50 65 60 59" stroke="#c45c5c" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Speed lines -->
+    <path d="M15 50 L25 50" stroke="#eab308" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <path d="M12 55 L22 55" stroke="#eab308" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+</svg>
