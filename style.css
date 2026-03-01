@@ -1049,3 +1049,11 @@ body {
 .calendar-weekdays span:nth-child(7) {
     color: #ef4444;
 }
+.character-panel img {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.character-panel img.loaded {
+    opacity: 1;
+}
