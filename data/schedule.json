@@ -43,7 +43,7 @@
       "name": "DEA VALDA",
       "role": "Staff",
       "roleCode": "",
-      "avatar": "assets/avatars/dea.svg",
+      "avatar": "assets/avatars/deavalda.svg",
       "schedule": ["P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P"]
     },
 
@@ -52,7 +52,7 @@
       "name": "WILLY MEDAN",
       "role": "Staff",
       "roleCode": "",
-      "avatar": "assets/avatars/willy_medan.svg",
+      "avatar": "assets/avatars/willymedan.svg",
       "schedule": ["P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P"]
     },
 
@@ -61,7 +61,7 @@
       "name": "WILLY PONTIANAK",
       "role": "Staff",
       "roleCode": "",
-      "avatar": "assets/avatars/willy_ptk.svg",
+      "avatar": "assets/avatars/willypontianak.svg",
       "schedule": ["P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","OFF","P","P","P","P","P","P","P","P","OFF","P"]
     },
 
