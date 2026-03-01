@@ -1,6 +1,5 @@
 /**
  * Staff Monthly Schedule Panel
- * Interactive dashboard for viewing staff shift schedules
  */
 
 // State
@@ -17,6 +16,7 @@ const modalRole = document.getElementById('modalRole');
 const modalPersonality = document.getElementById('modalPersonality');
 const calendarGrid = document.getElementById('calendarGrid');
 
+// FULL CHARACTER MAP
 const fullCharacterMap = {
     "ACIN": "assets/characters/acin.png",
     "HERMAN": "assets/characters/herman.png",
@@ -34,11 +34,21 @@ const fullCharacterMap = {
     "WENDI": "assets/characters/wendi.png",
     "RIANTO": "assets/characters/rianto.png"
 };
+
+// 🚀 PRELOAD CHARACTER IMAGES
+function preloadCharacters() {
+    Object.values(fullCharacterMap).forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+}
+
 /**
- * Initialize the application
+ * Initialize
  */
 async function init() {
     try {
+        preloadCharacters(); // 🔥 instant load
         await loadScheduleData();
         renderStaffGrid();
         setupEventListeners();
@@ -49,19 +59,17 @@ async function init() {
 }
 
 /**
- * Load schedule data from JSON file
+ * Load schedule data
  */
 async function loadScheduleData() {
     const response = await fetch('data/schedule.json');
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-    }
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     scheduleData = await response.json();
     updateScheduleMeta();
 }
 
 /**
- * Update the schedule month/year display
+ * Update month display
  */
 function updateScheduleMeta() {
     if (scheduleData && scheduleData.meta) {
@@ -71,21 +79,18 @@ function updateScheduleMeta() {
 }
 
 /**
- * Get CSS class based on role
+ * Role class
  */
 function getRoleClass(roleCode) {
     switch (roleCode) {
-        case 'L':
-            return 'role-leader';
-        case 'AL':
-            return 'role-asst';
-        default:
-            return 'role-staff';
+        case 'L': return 'role-leader';
+        case 'AL': return 'role-asst';
+        default: return 'role-staff';
     }
 }
 
 /**
- * Get display text for role
+ * Role text
  */
 function getRoleText(role, roleCode) {
     if (roleCode === 'L') return `(${roleCode}) ${role}`;
@@ -94,23 +99,16 @@ function getRoleText(role, roleCode) {
 }
 
 /**
- * Render the staff card grid
+ * Render staff cards
  */
 function renderStaffGrid() {
     if (!scheduleData || !scheduleData.staff) return;
 
-    // Priority Role Sorting
-    const rolePriority = {
-        "L": 1,
-        "AL": 2,
-        "": 3
-    };
+    const rolePriority = { "L": 1, "AL": 2, "": 3 };
 
     const sortedStaff = [...scheduleData.staff].sort((a, b) => {
         const roleDiff = rolePriority[a.roleCode] - rolePriority[b.roleCode];
         if (roleDiff !== 0) return roleDiff;
-
-        // Secondary sort by name
         return a.name.localeCompare(b.name);
     });
 
@@ -133,43 +131,21 @@ function renderStaffGrid() {
 }
 
 /**
- * Setup event listeners
+ * Events
  */
 function setupEventListeners() {
-    // Staff card clicks
+
     staffGrid.addEventListener('click', (e) => {
         const card = e.target.closest('.staff-card');
-        if (card) {
-            const staffId = card.dataset.staffId;
-            openScheduleModal(staffId);
-        }
+        if (card) openScheduleModal(card.dataset.staffId);
     });
-    // Hover lift effect
-staffGrid.addEventListener('mouseover', (e) => {
-    const card = e.target.closest('.staff-card');
-    if (card) {
-        card.style.transform = "translateY(-6px)";
-    }
-});
 
-staffGrid.addEventListener('mouseout', (e) => {
-    const card = e.target.closest('.staff-card');
-    if (card) {
-        card.style.transform = "";
-    }
-});
-
-    // Modal close
     modalClose.addEventListener('click', closeModal);
 
-    // Click outside modal to close
     scheduleModal.addEventListener('click', (e) => {
-        if (e.target === scheduleModal) {
-            closeModal();
-        }
+        if (e.target === scheduleModal) closeModal();
     });
 
-    // Escape key to close modal
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && scheduleModal.classList.contains('active')) {
             closeModal();
@@ -178,38 +154,38 @@ staffGrid.addEventListener('mouseout', (e) => {
 }
 
 /**
- * Open schedule modal for specific staff
+ * OPEN MODAL
  */
 function openScheduleModal(staffId) {
     const staff = scheduleData.staff.find(s => s.id === staffId);
     if (!staff) return;
 
-    // Update modal content
     modalAvatar.innerHTML = `<img src="${staff.avatar}" alt="${staff.name}">`;
     modalName.textContent = staff.name;
 
     const fullImg = document.getElementById("modalFullCharacter");
+
+    // Smooth loading
+    fullImg.classList.remove("loaded");
     fullImg.src = fullCharacterMap[staff.name] || staff.avatar;
-    
-    // Update role badge
+    fullImg.onload = () => {
+        fullImg.classList.add("loaded");
+    };
+
     const roleClass = getRoleClass(staff.roleCode);
     const roleText = getRoleText(staff.role, staff.roleCode);
     modalRole.className = `role-badge ${roleClass}`;
     modalRole.textContent = roleText;
 
-    // Update personality
     modalPersonality.textContent = staff.personality;
-
-    // Render calendar
     renderCalendar(staff.schedule);
 
-    // Show modal
     scheduleModal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
 
 /**
- * Close schedule modal
+ * Close modal
  */
 function closeModal() {
     scheduleModal.classList.remove('active');
@@ -217,7 +193,7 @@ function closeModal() {
 }
 
 /**
- * Render calendar grid
+ * Render calendar
  */
 function renderCalendar(schedule) {
     if (!schedule || schedule.length !== 31) {
@@ -238,32 +214,17 @@ function renderCalendar(schedule) {
     }).join('');
 }
 
-/**
- * Get CSS class for shift type
- */
 function getShiftClass(shift) {
     switch (shift) {
-        case 'P':
-            return 'shift-p';
-        case 'M':
-            return 'shift-m';
-        case 'OFF':
-            return 'shift-off';
-        default:
-            return 'shift-off';
+        case 'P': return 'shift-p';
+        case 'M': return 'shift-m';
+        case 'OFF': return 'shift-off';
+        default: return 'shift-off';
     }
 }
 
-/**
- * Show error message
- */
 function showError(message) {
-    staffGrid.innerHTML = `
-        <div class="error-message">
-            <p>${message}</p>
-        </div>
-    `;
+    staffGrid.innerHTML = `<div class="error-message"><p>${message}</p></div>`;
 }
 
-// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', init);
