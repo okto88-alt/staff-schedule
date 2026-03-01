@@ -782,3 +782,13 @@ body {
 .schedule-day:hover {
     transform: scale(1.08);
 }
+
+.ambient-glow {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(168,85,247,0.08), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(59,130,246,0.08), transparent 40%);
+    z-index: 0;
+}
