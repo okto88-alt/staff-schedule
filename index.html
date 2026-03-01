@@ -75,30 +75,35 @@
                 </div>
             </div>
 
-            <div class="modal-body">
-                <div class="calendar-header">
-                    <h3>Monthly Schedule</h3>
-                    <div class="shift-legend">
-                        <div class="legend-item">
-                            <span class="legend-dot shift-p"></span>
-                            <span>P - Morning</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-dot shift-m"></span>
-                            <span>M - Night</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-dot shift-off"></span>
-                            <span>OFF - Day Off</span>
-                        </div>
-                    </div>
+           <div class="modal-body split-layout">
+
+    <div class="character-panel">
+        <img id="modalFullCharacter" src="" />
+    </div>
+
+    <div class="schedule-panel">
+        <div class="calendar-header">
+            <h3>Monthly Schedule</h3>
+            <div class="shift-legend">
+                <div class="legend-item">
+                    <span class="legend-dot shift-p"></span>
+                    <span>P - Morning</span>
                 </div>
-                <div class="calendar-grid" id="calendarGrid">
-                    <!-- Calendar days will be dynamically inserted here -->
+                <div class="legend-item">
+                    <span class="legend-dot shift-m"></span>
+                    <span>M - Night</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot shift-off"></span>
+                    <span>OFF - Day Off</span>
                 </div>
             </div>
         </div>
+
+        <div class="calendar-grid" id="calendarGrid"></div>
     </div>
+
+</div>
 
     <script src="script.js"></script>
 
