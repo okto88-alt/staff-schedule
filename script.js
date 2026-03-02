@@ -38,6 +38,7 @@ const fullCharacterMap = {
 const characterVideoMap = {
     "HERMAN": "assets/characters/video/herman_idle.webm",
     "ACIN": "assets/characters/video/acin_idle.webm",
+    "HARI": "assets/characters/video/hari_idle.webm",
     "HEWIN": "assets/characters/video/hewin_idle.webm"
 };
 
