@@ -1291,3 +1291,25 @@ body {
 .character-panel{
     overflow:hidden;
 }
+
+.scene-stage{
+    background:url('assets/scene.jpg') center bottom no-repeat;
+    background-size:cover;
+    height:500px;
+    position:relative;
+}
+
+.character-line{
+    position:absolute;
+    bottom:40px;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+}
+
+.character-line video{
+    height:180px;
+    transform-origin:bottom center;
+}
