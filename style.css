@@ -1313,3 +1313,32 @@ body {
     height:180px;
     transform-origin:bottom center;
 }
+
+.character-line video{
+    height:180px;
+    transform-origin:bottom center;
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.4));
+}
+
+.staff-card::after{
+    content:"";
+    position:absolute;
+    bottom:-5px;
+    left:50%;
+    width:70%;
+    height:20px;
+    background: radial-gradient(ellipse, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 70%);
+    transform: translateX(-50%);
+    filter: blur(4px);
+    z-index:-1;
+}
+
+.character-line video{
+    mix-blend-mode: multiply;
+    opacity:0.95;
+}
+
+.staff-card{
+    backdrop-filter: blur(2px);
+}
+
