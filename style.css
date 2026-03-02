@@ -1352,3 +1352,18 @@ body {
 .schedule-panel{
     margin-left:460px;
 }
+
+.modal-header::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:-80px;
+    height:80px;
+    background: linear-gradient(
+        to bottom,
+        rgba(232,241,245,1) 0%,
+        rgba(232,241,245,0.9) 40%,
+        rgba(255,255,255,0) 100%
+    );
+}
