@@ -296,12 +296,13 @@ body {
 }
 
 /* ===== GRIDS ===== */
-.staff-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: var(--space-lg);
+.staff-grid{
+    display:flex;
+    align-items:flex-end;
+    gap:40px;
+    overflow-x:auto;
+    padding:40px 10px;
 }
-
 /* Hide unused elements */
 .leaders-grid,
 .assistants-grid,
@@ -408,17 +409,17 @@ body {
 }
 
 /* ===== AVATARS ===== */
-.staff-avatar {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background: var(--bg-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid var(--color-staff-border);
-    transition: all var(--transition-normal);
-    overflow: hidden;
+.staff-avatar{
+    width:auto;
+    height:auto;
+    border:none;
+    background:transparent;
+}
+
+.staff-avatar img{
+    height:150px;
+    object-fit:contain;
+    filter: drop-shadow(0 15px 20px rgba(0,0,0,0.15));
 }
 
 .staff-card:hover .staff-avatar {
@@ -841,9 +842,16 @@ body {
     }
 }
 
-.staff-card {
-    animation: fadeInUp 0.5s ease forwards;
-    opacity: 0;
+.staff-card{
+    background:transparent !important;
+    border:none !important;
+    box-shadow:none !important;
+    padding:0 !important;
+}
+
+.staff-card{
+    min-width:140px;
+    text-align:center;
 }
 
 .staff-card:nth-child(1) { animation-delay: 0.05s; }
