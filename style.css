@@ -1263,12 +1263,12 @@ body {
 
 .modal-body{
     display:flex;
-    align-items:center;
+    align-items:flex-end;
     gap:40px;
 }
 
 .character-panel{
-    flex:0 0 35%;
+    flex:0 0 45%;
     display:flex;
     justify-content:center;
     align-items:flex-end;
