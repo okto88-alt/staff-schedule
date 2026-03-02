@@ -204,7 +204,8 @@ function openScheduleModal(staffId) {
     modalName.textContent = staff.name;
 
     const fullImg = document.getElementById("modalFullCharacter");
-
+    const video = document.getElementById("modalCharacterVideo");
+    
     // Smooth loading
     fullImg.classList.remove("loaded");
     fullImg.src = fullCharacterMap[staff.name] || staff.avatar;
