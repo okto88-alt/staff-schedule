@@ -1340,19 +1340,29 @@ body {
 .staff-card{
     backdrop-filter: blur(2px);
 }
+/* ===== FIX MODAL BALANCE ===== */
+
+.modal-body.split-layout{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    padding:60px 80px;
+}
 
 .character-panel{
-    position:absolute;
-    left:40px;
-    bottom:0;
-    width:420px;
+    flex:0 0 45%;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
     pointer-events:none;
 }
 
 .schedule-panel{
-    margin-left:460px;
+    flex:0 0 45%;
+    margin-left:0;
 }
-
 .modal-header::after{
     content:"";
     position:absolute;
