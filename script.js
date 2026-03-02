@@ -125,8 +125,14 @@ function renderStaffGrid() {
             <div class="staff-card ${roleClass}" data-staff-id="${staff.id}">
                 <div class="staff-card-content">
                     <div class="staff-avatar">
-                        <img src="${fullCharacterMap[staff.name] || staff.avatar}" alt="${staff.name}" loading="lazy">
-                    </div>
+                        ${
+        characterVideoMap[staff.name]
+        ? `<video autoplay loop muted playsinline>
+         <source src="${characterVideoMap[staff.name]}" type="video/webm">
+           </video>`
+        : `<img src="${fullCharacterMap[staff.name] || staff.avatar}" alt="${staff.name}" loading="lazy">`
+        }  
+        </div>
                     <div class="staff-name">${staff.name}</div>
                     <span class="staff-role ${roleClass}">${roleText}</span>
                 </div>
