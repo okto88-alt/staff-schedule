@@ -1271,7 +1271,7 @@ body {
     flex:0 0 35%;
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-end;
 }
 
 .calendar-panel{
@@ -1289,7 +1289,7 @@ body {
 }
 
 .character-panel{
-    overflow:hidden;
+    overflow:visible;
 }
 
 .scene-stage{
