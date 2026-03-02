@@ -1397,3 +1397,10 @@ body {
     display:flex;
     flex-direction:column;
 }
+
+/* ===== CHARACTER VISUAL OFFSET ===== */
+
+.character-panel img,
+#modalCharacterVideo{
+    transform: translate(-20px, 40px);
+}
