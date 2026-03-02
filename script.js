@@ -35,11 +35,6 @@ const fullCharacterMap = {
     "RIANTO": "assets/characters/rianto.png"
 };
 
-const characterVideoMap = {
-    "HERMAN": "assets/characters/video/herman_idle.webm",
-    "HEWIN": "assets/characters/video/hewin_idle.webm"
-};
-
 // 🚀 PRELOAD CHARACTER IMAGES
 function preloadCharacters() {
     Object.values(fullCharacterMap).forEach(src => {
@@ -125,14 +120,8 @@ function renderStaffGrid() {
             <div class="staff-card ${roleClass}" data-staff-id="${staff.id}">
                 <div class="staff-card-content">
                     <div class="staff-avatar">
-                        ${
-        characterVideoMap[staff.name]
-        ? `<video autoplay loop muted playsinline>
-         <source src="${characterVideoMap[staff.name]}" type="video/webm">
-           </video>`
-        : `<img src="${fullCharacterMap[staff.name] || staff.avatar}" alt="${staff.name}" loading="lazy">`
-        }  
-        </div>
+                        <img src="${fullCharacterMap[staff.name] || staff.avatar}" alt="${staff.name}" loading="lazy">
+                    </div>
                     <div class="staff-name">${staff.name}</div>
                     <span class="staff-role ${roleClass}">${roleText}</span>
                 </div>
@@ -146,14 +135,11 @@ function renderStaffGrid() {
  */
 function setupEventListeners() {
 
-staffGrid.addEventListener('click', (e) => {
-    const card = e.target.closest('.staff-card');
-    if (card){
-        animateCharacterFly(card);
-        openScheduleModal(card.dataset.staffId);
-    }
-});
-    
+    staffGrid.addEventListener('click', (e) => {
+        const card = e.target.closest('.staff-card');
+        if (card) openScheduleModal(card.dataset.staffId);
+    });
+
     modalClose.addEventListener('click', closeModal);
 
     scheduleModal.addEventListener('click', (e) => {
@@ -170,39 +156,6 @@ staffGrid.addEventListener('click', (e) => {
 /**
  * OPEN MODAL
  */
-function animateCharacterFly(card){
-
-    const img = card.querySelector("img");
-    const clone = img.cloneNode(true);
-
-    const start = img.getBoundingClientRect();
-    const target = document.getElementById("modalFullCharacter");
-
-    clone.classList.add("fly-clone");
-    clone.style.left = start.left+"px";
-    clone.style.top = start.top+"px";
-    clone.style.width = start.width+"px";
-    clone.style.height = start.height+"px";
-
-    document.body.appendChild(clone);
-
-    scheduleModal.classList.add('active');
-
-    requestAnimationFrame(()=>{
-
-        const end = target.getBoundingClientRect();
-
-        clone.style.left = end.left+"px";
-        clone.style.top = end.top+"px";
-        clone.style.width = end.width+"px";
-        clone.style.height = end.height+"px";
-    });
-
-    setTimeout(()=>{
-        clone.remove();
-    },450);
-}
-
 function openScheduleModal(staffId) {
     const staff = scheduleData.staff.find(s => s.id === staffId);
     if (!staff) return;
@@ -211,26 +164,14 @@ function openScheduleModal(staffId) {
     modalName.textContent = staff.name;
 
     const fullImg = document.getElementById("modalFullCharacter");
-    const video = document.getElementById("modalCharacterVideo");
-    
-fullImg.classList.remove("loaded");
 
-if(characterVideoMap[staff.name]){
-    video.src = characterVideoMap[staff.name];
-    video.style.display = "block";
-    fullImg.style.display = "none";
-    video.load();
-    video.play();
-}else{
-    video.style.display = "none";
-    fullImg.style.display = "block";
+    // Smooth loading
+    fullImg.classList.remove("loaded");
     fullImg.src = fullCharacterMap[staff.name] || staff.avatar;
-}
+    fullImg.onload = () => {
+        fullImg.classList.add("loaded");
+    };
 
-fullImg.onload = () => {
-    fullImg.classList.add("loaded");
-};
-    
     const roleClass = getRoleClass(staff.roleCode);
     const roleText = getRoleText(staff.role, staff.roleCode);
     modalRole.className = `role-badge ${roleClass}`;
