@@ -1281,3 +1281,7 @@ body {
 .character-panel video{
     max-width:100%;
 }
+
+#modalCharacterVideo{
+    transform: scale(1.05);
+}
