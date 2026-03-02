@@ -1091,3 +1091,254 @@ body {
 .character-panel img.loaded {
     opacity: 1;
 }
+/* ===============================
+   🎬 CINEMATIC CHARACTER LINEUP
+   =============================== */
+
+/* GRID = CENTER STAGE */
+.staff-grid{
+    display:flex !important;
+    justify-content:center;
+    align-items:flex-end;
+    gap:60px;
+    padding:80px 20px;
+    position:relative;
+}
+
+/* CARD RESET */
+.staff-card{
+    background:transparent !important;
+    border:none !important;
+    box-shadow:none !important;
+    padding:0 !important;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    min-width:160px;
+    min-height:420px;
+    position:relative;
+    transition:all 0.4s ease;
+}
+
+/* CHARACTER FULL */
+.staff-avatar{
+    width:auto !important;
+    height:auto !important;
+    background:transparent !important;
+    border:none !important;
+}
+
+.staff-avatar img{
+    height:340px !important;
+    width:auto !important;
+    object-fit:contain;
+    filter: drop-shadow(0 30px 40px rgba(0,0,0,0.25));
+    position:relative;
+    z-index:2;
+    transition:all 0.4s ease;
+}
+
+/* ===== SPOTLIGHT TOP ===== */
+.staff-card::before{
+    content:"";
+    position:absolute;
+    top:-120px;
+    left:50%;
+    transform:translateX(-50%);
+    width:280px;
+    height:280px;
+    background: radial-gradient(circle at center,
+        rgba(255,255,255,0.45) 0%,
+        rgba(255,255,255,0.18) 40%,
+        transparent 70%);
+    filter:blur(40px);
+    pointer-events:none;
+    z-index:0;
+    transition:all 0.4s ease;
+}
+
+/* ===== GROUND SHADOW ===== */
+.staff-card::after{
+    content:"";
+    position:absolute;
+    bottom:10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:140px;
+    height:30px;
+    background: radial-gradient(ellipse at center,
+        rgba(0,0,0,0.35) 0%,
+        transparent 70%);
+    filter:blur(14px);
+    z-index:0;
+}
+
+/* ===== DRAMATIC HOVER ===== */
+.staff-card:hover{
+    transform:scale(1.15) translateY(-10px);
+}
+
+.staff-card:hover::before{
+    background: radial-gradient(circle at center,
+        rgba(255,255,255,0.65) 0%,
+        rgba(255,255,255,0.25) 40%,
+        transparent 70%);
+}
+
+/* ===== CINEMATIC DEPTH ===== */
+.staff-grid:hover .staff-card{
+    opacity:0.35;
+    transform:scale(0.9);
+}
+
+.staff-grid .staff-card:hover{
+    opacity:1;
+    transform:scale(1.18) translateY(-12px);
+}
+
+/* ===== NAME BELOW ===== */
+.staff-name{
+    margin-top:10px;
+    font-size:1rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1200px){
+    .staff-avatar img{
+        height:260px !important;
+    }
+}
+
+@media (max-width:768px){
+    .staff-avatar img{
+        height:200px !important;
+    }
+}
+
+.staff-grid{
+    overflow-x:auto !important;
+    justify-content:flex-start !important;
+    padding-left:80px;
+    padding-right:80px;
+    scroll-behavior:smooth;
+}
+.staff-grid{
+    scroll-snap-type:x mandatory;
+}
+
+.staff-card{
+    scroll-snap-align:center;
+}
+.staff-grid::before,
+.staff-grid::after{
+    content:"";
+    min-width:100px;
+}
+
+.staff-avatar img{
+    animation: idleFloat 5s ease-in-out infinite;
+}
+
+@keyframes idleFloat{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-8px); }
+}
+.staff-grid{
+    scroll-snap-type:x mandatory;
+}
+
+.staff-card{
+    scroll-snap-align:center;
+}
+.staff-card:hover .staff-avatar img{
+    filter: drop-shadow(0 35px 45px rgba(0,0,0,0.35));
+}
+
+#modalCharacterVideo{
+    max-height:420px;
+    width:auto;
+    object-fit:contain;
+}
+
+.modal-body{
+    display:flex;
+    align-items:center;
+    gap:40px;
+}
+
+.character-panel{
+    flex:0 0 35%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.calendar-panel{
+    flex:1;
+}
+
+.character-panel video{
+    max-width:100%;
+}
+
+#modalCharacterVideo{
+    max-height:480px;
+    transform: scale(1.35);
+    transform-origin: bottom center;
+}
+
+.character-panel{
+    overflow:hidden;
+}
+
+.scene-stage{
+    background:url('assets/scene.jpg') center bottom no-repeat;
+    background-size:cover;
+    height:500px;
+    position:relative;
+}
+
+.character-line{
+    position:absolute;
+    bottom:40px;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+}
+
+.character-line video{
+    height:180px;
+    transform-origin:bottom center;
+}
+
+.character-line video{
+    height:180px;
+    transform-origin:bottom center;
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.4));
+}
+
+.staff-card::after{
+    content:"";
+    position:absolute;
+    bottom:-5px;
+    left:50%;
+    width:70%;
+    height:20px;
+    background: radial-gradient(ellipse, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 70%);
+    transform: translateX(-50%);
+    filter: blur(4px);
+    z-index:-1;
+}
+
+.character-line video{
+    mix-blend-mode: multiply;
+    opacity:0.95;
+}
+
+.staff-card{
+    backdrop-filter: blur(2px);
+}
+
