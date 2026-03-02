@@ -1283,5 +1283,11 @@ body {
 }
 
 #modalCharacterVideo{
-    transform: scale(1.05);
+    max-height:480px;
+    transform: scale(1.25);
+    transform-origin: bottom center;
+}
+
+.character-panel{
+    overflow:hidden;
 }
