@@ -135,11 +135,14 @@ function renderStaffGrid() {
  */
 function setupEventListeners() {
 
-    staffGrid.addEventListener('click', (e) => {
-        const card = e.target.closest('.staff-card');
-        if (card) openScheduleModal(card.dataset.staffId);
-    });
-
+staffGrid.addEventListener('click', (e) => {
+    const card = e.target.closest('.staff-card');
+    if (card){
+        animateCharacterFly(card);
+        openScheduleModal(card.dataset.staffId);
+    }
+});
+    
     modalClose.addEventListener('click', closeModal);
 
     scheduleModal.addEventListener('click', (e) => {
@@ -156,6 +159,39 @@ function setupEventListeners() {
 /**
  * OPEN MODAL
  */
+function animateCharacterFly(card){
+
+    const img = card.querySelector("img");
+    const clone = img.cloneNode(true);
+
+    const start = img.getBoundingClientRect();
+    const target = document.getElementById("modalFullCharacter");
+
+    clone.classList.add("fly-clone");
+    clone.style.left = start.left+"px";
+    clone.style.top = start.top+"px";
+    clone.style.width = start.width+"px";
+    clone.style.height = start.height+"px";
+
+    document.body.appendChild(clone);
+
+    scheduleModal.classList.add('active');
+
+    requestAnimationFrame(()=>{
+
+        const end = target.getBoundingClientRect();
+
+        clone.style.left = end.left+"px";
+        clone.style.top = end.top+"px";
+        clone.style.width = end.width+"px";
+        clone.style.height = end.height+"px";
+    });
+
+    setTimeout(()=>{
+        clone.remove();
+    },450);
+}
+
 function openScheduleModal(staffId) {
     const staff = scheduleData.staff.find(s => s.id === staffId);
     if (!staff) return;
