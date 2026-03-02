@@ -1100,8 +1100,8 @@ body {
     display:flex;
     justify-content:center;
     align-items:flex-end;
-    gap:40px;              /* sebelumnya 60px */
-    padding:60px 40px;     /* sebelumnya 80px */
+    gap:40px;
+    padding:60px 30px;   /* kiri kanan lebih kecil */
     overflow-x:auto;
     scroll-behavior:smooth;
     scroll-snap-type:x mandatory;
@@ -1230,11 +1230,6 @@ body {
 
 .staff-card{
     scroll-snap-align:center;
-}
-.staff-grid::before,
-.staff-grid::after{
-    content:"";
-    min-width:100px;
 }
 
 .staff-avatar img{
