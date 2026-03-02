@@ -35,6 +35,10 @@ const fullCharacterMap = {
     "RIANTO": "assets/characters/rianto.png"
 };
 
+const characterVideoMap = {
+    "HERMAN": "assets/characters/video/herman_idle.webm"
+};
+
 // 🚀 PRELOAD CHARACTER IMAGES
 function preloadCharacters() {
     Object.values(fullCharacterMap).forEach(src => {
