@@ -1256,7 +1256,7 @@ body {
 }
 
 #modalCharacterVideo{
-    max-height:420px;
+    max-height:480px;
     width:auto;
     object-fit:contain;
 }
@@ -1366,4 +1366,12 @@ body {
         rgba(232,241,245,0.9) 40%,
         rgba(255,255,255,0) 100%
     );
+}
+
+.modal-header{
+    min-height:160px;
+}
+
+.modal-body{
+    padding-top: 60px;
 }
