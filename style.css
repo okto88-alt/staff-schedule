@@ -1254,3 +1254,30 @@ body {
 .staff-card:hover .staff-avatar img{
     filter: drop-shadow(0 35px 45px rgba(0,0,0,0.35));
 }
+
+#modalCharacterVideo{
+    max-height:420px;
+    width:auto;
+    object-fit:contain;
+}
+
+.modal-body{
+    display:flex;
+    align-items:center;
+    gap:40px;
+}
+
+.character-panel{
+    flex:0 0 35%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.calendar-panel{
+    flex:1;
+}
+
+.character-panel video{
+    max-width:100%;
+}
