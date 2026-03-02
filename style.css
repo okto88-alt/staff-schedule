@@ -1284,7 +1284,7 @@ body {
 
 #modalCharacterVideo{
     max-height:480px;
-    transform: scale(1.25);
+    transform: scale(1.35);
     transform-origin: bottom center;
 }
 
