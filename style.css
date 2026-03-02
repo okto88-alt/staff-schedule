@@ -1095,16 +1095,17 @@ body {
    🎬 CINEMATIC CHARACTER LINEUP
    =============================== */
 
-/* GRID = CENTER STAGE */
+/* ===== TIGHTER CINEMATIC GRID ===== */
 .staff-grid{
-    display:flex !important;
+    display:flex;
     justify-content:center;
     align-items:flex-end;
-    gap:60px;
-    padding:80px 20px;
-    position:relative;
+    gap:40px;              /* sebelumnya 60px */
+    padding:60px 40px;     /* sebelumnya 80px */
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    scroll-snap-type:x mandatory;
 }
-
 /* CARD RESET */
 .staff-card{
     background:transparent !important;
