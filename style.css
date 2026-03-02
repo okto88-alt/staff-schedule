@@ -1335,3 +1335,11 @@ body {
     backdrop-filter: blur(2px);
 }
 
+.scene-stage{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    min-height:500px;
+    position:relative;
+}
