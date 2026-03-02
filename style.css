@@ -418,9 +418,8 @@ body {
 }
 
 .staff-avatar img{
-    height:240px;
-    object-fit:contain;
-    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2));
+    height:100% !important;
+    max-height:420px;
 }
 
 .staff-card:hover .staff-avatar {
@@ -463,13 +462,12 @@ body {
 .staff-avatar img {
     width: 80%;
     height: 80%;
-    object-fit: contain;
+    object-fit: cover;;
 }
 
 .staff-avatar img{
-    height:240px;
-    object-fit:contain;
-    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2));
+    height:100% !important;
+    max-height:420px;
 }
 
 .staff-avatar img{
@@ -672,7 +670,7 @@ body {
 .modal-avatar img {
     width: 85%;
     height: 85%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .modal-identity {
@@ -877,7 +875,7 @@ body {
 }
 
 .staff-card{
-    min-height:260px;
+    min-height:420px;
 }
 
 .staff-card:nth-child(1) { animation-delay: 0.05s; }
@@ -1130,13 +1128,8 @@ body {
 }
 
 .staff-avatar img{
-    height:340px !important;
-    width:auto !important;
-    object-fit:contain;
-    filter: drop-shadow(0 30px 40px rgba(0,0,0,0.25));
-    position:relative;
-    z-index:2;
-    transition:all 0.4s ease;
+    height:100% !important;
+    max-height:420px;
 }
 
 /* ===== SPOTLIGHT TOP ===== */
