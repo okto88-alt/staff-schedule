@@ -1378,10 +1378,22 @@ body {
     );
 }
 
+/* ===== FIX VERTICAL BALANCE ===== */
+
 .modal-header{
-    min-height:160px;
+    padding: 40px 60px;
 }
 
 .modal-body{
-    padding-top: 100px;
+    padding: 40px 60px 60px;
+}
+
+/* Pastikan modal center vertical */
+.modal-overlay{
+    align-items:center;
+}
+
+.modal-container{
+    display:flex;
+    flex-direction:column;
 }
