@@ -1262,9 +1262,8 @@ body {
 }
 
 .modal-body{
-    display:flex;
-    align-items:flex-end;
-    gap:40px;
+    position:relative;
+    padding: var(--space-2xl);
 }
 
 .character-panel{
@@ -1342,3 +1341,14 @@ body {
     backdrop-filter: blur(2px);
 }
 
+.character-panel{
+    position:absolute;
+    left:40px;
+    bottom:0;
+    width:420px;
+    pointer-events:none;
+}
+
+.schedule-panel{
+    margin-left:460px;
+}
