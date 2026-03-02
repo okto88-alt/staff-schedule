@@ -1235,3 +1235,22 @@ body {
     content:"";
     min-width:100px;
 }
+
+.staff-avatar img{
+    animation: idleFloat 5s ease-in-out infinite;
+}
+
+@keyframes idleFloat{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-8px); }
+}
+.staff-grid{
+    scroll-snap-type:x mandatory;
+}
+
+.staff-card{
+    scroll-snap-align:center;
+}
+.staff-card:hover .staff-avatar img{
+    filter: drop-shadow(0 35px 45px rgba(0,0,0,0.35));
+}
