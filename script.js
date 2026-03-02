@@ -1,5 +1,5 @@
 /**
- * Staff Monthly Schedule Panel
+ * Staff Monthly Schedule Panel - Refactored
  */
 
 // State
@@ -15,252 +15,128 @@ const modalName = document.getElementById('modalName');
 const modalRole = document.getElementById('modalRole');
 const modalPersonality = document.getElementById('modalPersonality');
 const calendarGrid = document.getElementById('calendarGrid');
+const modalFullImg = document.getElementById('modalFullCharacter');
+const modalVideo = document.getElementById('modalCharacterVideo');
 
-// FULL CHARACTER MAP
-const fullCharacterMap = {
-    "ACIN": "assets/characters/acin.png",
-    "HERMAN": "assets/characters/herman.png",
-    "DAVID": "assets/characters/david.png",
-    "HARI": "assets/characters/hari.png",
-    "BUDI": "assets/characters/budi.png",
-    "DEA VALDA": "assets/characters/dea.png",
-    "HADAD": "assets/characters/hadad.png",
-    "HEWIN": "assets/characters/hewin.png",
-    "LISTANI": "assets/characters/listani.png",
-    "WILLY MEDAN": "assets/characters/wilmed.png",
-    "WILLY PONTIANAK": "assets/characters/wilpon.png",
-    "NIBRAS": "assets/characters/nibras.png",
-    "RIAN": "assets/characters/rian.png",
-    "WENDI": "assets/characters/wendi.png",
-    "RIANTO": "assets/characters/rianto.png"
+// FULL CHARACTER MAP (Images & Videos)
+const characterAssets = {
+    "ACIN": { img: "assets/characters/acin.png", vid: "assets/video/acin.webm" },
+    "HERMAN": { img: "assets/characters/herman.png", vid: null },
+    "DAVID": { img: "assets/characters/david.png", vid: null },
+    "HARI": { img: "assets/characters/hari.png", vid: null },
+    "BUDI": { img: "assets/characters/budi.png", vid: null },
+    "DEA VALDA": { img: "assets/characters/dea.png", vid: null },
+    "HADAD": { img: "assets/characters/hadad.png", vid: null },
+    "HEWIN": { img: "assets/characters/hewin.png", vid: null },
+    "LISTANI": { img: "assets/characters/listani.png", vid: null },
+    "WILLY MEDAN": { img: "assets/characters/wilmed.png", vid: null },
+    "WILLY PONTIANAK": { img: "assets/characters/wilpon.png", vid: null },
+    "NIBRAS": { img: "assets/characters/nibras.png", vid: null },
+    "RIAN": { img: "assets/characters/rian.png", vid: null },
+    "WENDI": { img: "assets/characters/wendi.png", vid: null },
+    "RIANTO": { img: "assets/characters/rianto.png", vid: null }
 };
-
-const characterVideoMap = {
-    "HERMAN": "assets/characters/video/herman_idle.webm",
-    "HEWIN": "assets/characters/video/hewin_idle.webm"
-};
-
-// 🚀 PRELOAD CHARACTER IMAGES
-function preloadCharacters() {
-    Object.values(fullCharacterMap).forEach(src => {
-        const img = new Image();
-        img.src = src;
-    });
-}
 
 /**
  * Initialize
  */
-async function init() {
-    try {
-        preloadCharacters(); // 🔥 instant load
-        await loadScheduleData();
-        renderStaffGrid();
-        setupEventListeners();
-    } catch (error) {
-        console.error('Failed to initialize:', error);
-        showError('Failed to load schedule data. Please refresh the page.');
-    }
-}
-
-/**
- * Load schedule data
- */
-async function loadScheduleData() {
-    const response = await fetch('data/schedule.json');
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-    scheduleData = await response.json();
-    updateScheduleMeta();
-}
-
-/**
- * Update month display
- */
-function updateScheduleMeta() {
-    if (scheduleData && scheduleData.meta) {
-        const { month, year } = scheduleData.meta;
-        scheduleMeta.innerHTML = `<span class="month-badge">${month} ${year}</span>`;
-    }
-}
-
-/**
- * Role class
- */
-function getRoleClass(roleCode) {
-    switch (roleCode) {
-        case 'L': return 'role-leader';
-        case 'AL': return 'role-asst';
-        default: return 'role-staff';
-    }
-}
-
-/**
- * Role text
- */
-function getRoleText(role, roleCode) {
-    if (roleCode === 'L') return `(${roleCode}) ${role}`;
-    if (roleCode === 'AL') return `(${roleCode}) ${role}`;
-    return role;
-}
-
-/**
- * Render staff cards
- */
-function renderStaffGrid() {
-    if (!scheduleData || !scheduleData.staff) return;
-
-    const rolePriority = { "L": 1, "AL": 2, "": 3 };
-
-    const sortedStaff = [...scheduleData.staff].sort((a, b) => {
-        const roleDiff = rolePriority[a.roleCode] - rolePriority[b.roleCode];
-        if (roleDiff !== 0) return roleDiff;
-        return a.name.localeCompare(b.name);
-    });
-
-    staffGrid.innerHTML = sortedStaff.map(staff => {
-        const roleClass = getRoleClass(staff.roleCode);
-        const roleText = getRoleText(staff.role, staff.roleCode);
-
-        return `
-            <div class="staff-card ${roleClass}" data-staff-id="${staff.id}">
-                <div class="staff-card-content">
-                    <div class="staff-avatar">
-                        <img src="${fullCharacterMap[staff.name] || staff.avatar}" alt="${staff.name}" loading="lazy">
-                    </div>
-                    <div class="staff-name">${staff.name}</div>
-                    <span class="staff-role ${roleClass}">${roleText}</span>
-                </div>
-            </div>
-        `;
-    }).join('');
-}
-
-/**
- * Events
- */
-function setupEventListeners() {
-
-staffGrid.addEventListener('click', (e) => {
-    const card = e.target.closest('.staff-card');
-    if (card){
-        animateCharacterFly(card);
-        openScheduleModal(card.dataset.staffId);
-    }
-});
+document.addEventListener('DOMContentLoaded', () => {
+    fetchSchedule();
     
     modalClose.addEventListener('click', closeModal);
-
     scheduleModal.addEventListener('click', (e) => {
         if (e.target === scheduleModal) closeModal();
     });
+});
 
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && scheduleModal.classList.contains('active')) {
-            closeModal();
-        }
-    });
+/**
+ * Fetch Data
+ */
+async function fetchSchedule() {
+    try {
+        const response = await fetch('data.json');
+        if (!response.ok) throw new Error('Gagal mengambil data jadwal');
+        
+        scheduleData = await response.json();
+        renderHeader(scheduleData.month, scheduleData.year);
+        renderStaffGrid(scheduleData.staff);
+    } catch (error) {
+        console.error('Error:', error);
+        staffGrid.innerHTML = `<p class="error">Gagal memuat data: ${error.message}</p>`;
+    }
+}
+
+function renderHeader(month, year) {
+    scheduleMeta.innerHTML = `<span class="month-badge">${month} ${year}</span>`;
 }
 
 /**
- * OPEN MODAL
+ * Render Staff Cards
  */
-function animateCharacterFly(card){
-
-    const img = card.querySelector("img");
-    const clone = img.cloneNode(true);
-
-    const start = img.getBoundingClientRect();
-    const target = document.getElementById("modalFullCharacter");
-
-    clone.classList.add("fly-clone");
-    clone.style.left = start.left+"px";
-    clone.style.top = start.top+"px";
-    clone.style.width = start.width+"px";
-    clone.style.height = start.height+"px";
-
-    document.body.appendChild(clone);
-
-    scheduleModal.classList.add('active');
-
-    requestAnimationFrame(()=>{
-
-        const end = target.getBoundingClientRect();
-
-        clone.style.left = end.left+"px";
-        clone.style.top = end.top+"px";
-        clone.style.width = end.width+"px";
-        clone.style.height = end.height+"px";
-    });
-
-    setTimeout(()=>{
-        clone.remove();
-    },450);
+function renderStaffGrid(staffList) {
+    staffGrid.innerHTML = staffList.map(staff => `
+        <div class="staff-card" onclick="openModal('${staff.name}')">
+            <div class="staff-avatar">
+                <img src="${staff.avatar}" alt="${staff.name}">
+            </div>
+            <div class="staff-name">${staff.name}</div>
+        </div>
+    `).join('');
 }
 
-function openScheduleModal(staffId) {
-    const staff = scheduleData.staff.find(s => s.id === staffId);
+/**
+ * Modal Logic
+ */
+function openModal(staffName) {
+    const staff = scheduleData.staff.find(s => s.name === staffName);
     if (!staff) return;
 
-    modalAvatar.innerHTML = `<img src="${staff.avatar}" alt="${staff.name}">`;
+    // Set Identity
     modalName.textContent = staff.name;
-
-    const fullImg = document.getElementById("modalFullCharacter");
-    const video = document.getElementById("modalCharacterVideo");
-    
-fullImg.classList.remove("loaded");
-
-if(characterVideoMap[staff.name]){
-    video.src = characterVideoMap[staff.name];
-    video.style.display = "block";
-    fullImg.style.display = "none";
-    video.load();
-    video.play();
-}else{
-    video.style.display = "none";
-    fullImg.style.display = "block";
-    fullImg.src = fullCharacterMap[staff.name] || staff.avatar;
-}
-
-fullImg.onload = () => {
-    fullImg.classList.add("loaded");
-};
-    
-    const roleClass = getRoleClass(staff.roleCode);
-    const roleText = getRoleText(staff.role, staff.roleCode);
-    modalRole.className = `role-badge ${roleClass}`;
-    modalRole.textContent = roleText;
-
     modalPersonality.textContent = staff.personality;
-    renderCalendar(staff.schedule);
+    
+    // Set Role Badge
+    const roleCode = staff.roleCode || 'staff';
+    modalRole.className = `role-badge role-${roleCode}`;
+    modalRole.textContent = staff.role;
 
+    // Set Avatar in Header
+    modalAvatar.innerHTML = `<img src="${staff.avatar}" alt="${staff.name}">`;
+
+    // Handle Character Panel (Image vs Video)
+    const assets = characterAssets[staff.name.toUpperCase()];
+    if (assets && assets.vid) {
+        modalVideo.src = assets.vid;
+        modalVideo.style.display = 'block';
+        modalFullImg.style.display = 'none';
+        modalVideo.play();
+    } else {
+        modalVideo.pause();
+        modalVideo.style.display = 'none';
+        modalFullImg.src = assets ? assets.img : staff.avatar;
+        modalFullImg.style.display = 'block';
+    }
+
+    renderCalendar(staff.schedule);
     scheduleModal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
 
-/**
- * Close modal
- */
 function closeModal() {
     scheduleModal.classList.remove('active');
     document.body.style.overflow = '';
+    modalVideo.pause();
 }
 
 /**
- * Render calendar
+ * Render Calendar Grid
  */
 function renderCalendar(schedule) {
-    if (!schedule || schedule.length !== 31) {
-        calendarGrid.innerHTML = '<p class="error">Invalid schedule data</p>';
-        return;
-    }
-
     calendarGrid.innerHTML = schedule.map((shift, index) => {
-        const day = index + 1;
         const shiftClass = getShiftClass(shift);
-
         return `
             <div class="calendar-day ${shiftClass}">
-                <span class="day-number">${day}</span>
+                <span class="day-number">${index + 1}</span>
                 <span class="shift-code">${shift}</span>
             </div>
         `;
@@ -272,12 +148,6 @@ function getShiftClass(shift) {
         case 'P': return 'shift-p';
         case 'M': return 'shift-m';
         case 'OFF': return 'shift-off';
-        default: return 'shift-off';
+        default: return '';
     }
 }
-
-function showError(message) {
-    staffGrid.innerHTML = `<div class="error-message"><p>${message}</p></div>`;
-}
-
-document.addEventListener('DOMContentLoaded', init);
