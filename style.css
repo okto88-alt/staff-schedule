@@ -1215,3 +1215,23 @@ body {
         height:200px !important;
     }
 }
+
+.staff-grid{
+    overflow-x:auto !important;
+    justify-content:flex-start !important;
+    padding-left:80px;
+    padding-right:80px;
+    scroll-behavior:smooth;
+}
+.staff-grid{
+    scroll-snap-type:x mandatory;
+}
+
+.staff-card{
+    scroll-snap-align:center;
+}
+.staff-grid::before,
+.staff-grid::after{
+    content:"";
+    min-width:100px;
+}
