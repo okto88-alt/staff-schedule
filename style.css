@@ -1358,8 +1358,8 @@ body {
     position:absolute;
     left:0;
     right:0;
-    bottom:-80px;
-    height:80px;
+    bottom:-100px;
+    height:100px;
     background: linear-gradient(
         to bottom,
         rgba(232,241,245,1) 0%,
@@ -1373,5 +1373,5 @@ body {
 }
 
 .modal-body{
-    padding-top: 60px;
+    padding-top: 100px;
 }
