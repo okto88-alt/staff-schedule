@@ -418,9 +418,9 @@ body {
 }
 
 .staff-avatar img{
-    height:150px;
+    height:240px;
     object-fit:contain;
-    filter: drop-shadow(0 15px 20px rgba(0,0,0,0.15));
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2));
 }
 
 .staff-card:hover .staff-avatar {
@@ -467,9 +467,9 @@ body {
 }
 
 .staff-avatar img{
-    height:160px;
+    height:240px;
     object-fit:contain;
-    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.18));
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2));
 }
 
 .staff-avatar img{
@@ -874,6 +874,10 @@ body {
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
+}
+
+.staff-card{
+    min-height:260px;
 }
 
 .staff-card:nth-child(1) { animation-delay: 0.05s; }
