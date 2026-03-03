@@ -295,14 +295,6 @@ body {
     font-weight: 600;
 }
 
-/* ===== GRIDS ===== */
-.staff-grid{
-    display:flex;
-    align-items:flex-end;
-    gap:40px;
-    overflow-x:auto;
-    padding:40px 10px;
-}
 /* Hide unused elements */
 .leaders-grid,
 .assistants-grid,
