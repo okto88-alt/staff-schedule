@@ -40,6 +40,8 @@ const characterVideoMap = {
     "BUDI": "assets/characters/video/budi_idle.webm",
     "HARI": "assets/characters/video/hari_idle.webm",
     "DEA VALDA": "assets/characters/video/dea_idle.webm",
+    "ACIN": "assets/characters/video/acin_idle.webm",
+    "DAVID": "assets/characters/video/david_idle.webm",
     "HEWIN": "assets/characters/video/hewin_idle.webm"
 };
 
