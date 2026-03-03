@@ -191,16 +191,26 @@ function openScheduleModal(staffId) {
     fullImg.classList.remove("loaded");
 
     if (characterVideoMap[staff.name]) {
-        video.src = characterVideoMap[staff.name];
-        video.style.display = "block";
-        fullImg.style.display = "none";
-        video.load();
-        video.play();
-    } else {
-        video.style.display = "none";
-        fullImg.style.display = "block";
-        fullImg.src = fullCharacterMap[staff.name] || staff.avatar;
-    }
+
+    video.pause();
+    video.currentTime = 0;
+    video.src = characterVideoMap[staff.name];
+
+    video.style.display = "block";
+    fullImg.style.display = "none";
+
+    video.load();
+
+    video.play().catch(() => {});
+
+} else {
+
+    video.pause();
+    video.style.display = "none";
+
+    fullImg.style.display = "block";
+    fullImg.src = fullCharacterMap[staff.name] || staff.avatar;
+}
 
     fullImg.onload = () => fullImg.classList.add("loaded");
 
