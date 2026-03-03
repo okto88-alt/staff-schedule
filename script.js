@@ -42,6 +42,9 @@ const characterVideoMap = {
     "DEA VALDA": "assets/characters/video/dea_idle.webm",
     "ACIN": "assets/characters/video/acin_idle.webm",
     "DAVID": "assets/characters/video/david_idle.webm",
+    "HADAD": "assets/characters/video/hadad_idle.webm",
+    "LISTANI": "assets/characters/video/listani_idle.webm",
+    "NIBRAS": "assets/characters/video/nibras_idle.webm",
     "HEWIN": "assets/characters/video/hewin_idle.webm"
 };
 
