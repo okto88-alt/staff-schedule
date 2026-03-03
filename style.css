@@ -379,3 +379,62 @@ body {
 #modalCharacterVideo{
     transform: translate(-20px, 40px);
 }
+
+/* ===== PURE CHARACTER LINEUP ===== */
+
+.staff-grid{
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    gap:60px;
+    padding:100px 40px;
+}
+
+.staff-card{
+    background:none !important;
+    border:none !important;
+    box-shadow:none !important;
+    padding:0 !important;
+    min-width:auto;
+    min-height:auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    transition:0.4s ease;
+}
+
+.staff-avatar{
+    background:none !important;
+    border:none !important;
+}
+
+.staff-avatar img{
+    height:340px !important;
+    object-fit:contain;
+    transition:0.4s ease;
+    filter: drop-shadow(0 30px 40px rgba(0,0,0,0.25));
+}
+
+.staff-name{
+    margin-top:12px;
+    font-weight:600;
+    font-size:14px;
+    opacity:0.8;
+    transition:0.3s;
+}
+
+/* Hover Effect */
+.staff-grid:hover .staff-card{
+    opacity:0.4;
+    transform:scale(0.9);
+}
+
+.staff-grid .staff-card:hover{
+    opacity:1;
+    transform:scale(1.18) translateY(-15px);
+}
+
+.staff-card:hover .staff-avatar img{
+    filter: drop-shadow(0 40px 50px rgba(0,0,0,0.35));
+}
+
