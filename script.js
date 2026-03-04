@@ -54,18 +54,27 @@ const characterVideoMap = {
 
 // 🚀 PRELOAD CHARACTER IMAGES
 function preloadCharacters() {
-    Object.values(fullCharacterMap).forEach(src => {
-        const img = new Image();
-        img.src = src;
-    });
-}
 
+    const images = Object.values(fullCharacterMap);
+
+    return Promise.all(
+        images.map(src => {
+            return new Promise(resolve => {
+                const img = new Image();
+                img.src = src;
+                img.onload = resolve;
+                img.onerror = resolve;
+            });
+        })
+    );
+
+}
 /**
  * Initialize
  */
 async function init() {
     try {
-        preloadCharacters(); // 🔥 instant load
+        await preloadCharacters(); // 🔥 instant load
         await loadScheduleData();
         renderStaffGrid();
         setupEventListeners();
@@ -137,7 +146,7 @@ function renderStaffGrid() {
             <div class="staff-card ${roleClass}" data-staff-id="${staff.id}">
                 <div class="staff-card-content">
                     <div class="staff-avatar">
-                        <img src="${fullCharacterMap[staff.name] || staff.avatar}" alt="${staff.name}" loading="lazy">
+                        <img src="${fullCharacterMap[staff.name] || staff.avatar}" alt="${staff.name}">
                     </div>
                     <div class="staff-name">${staff.name}</div>
                     <span class="staff-role ${roleClass}">${roleText}</span>
