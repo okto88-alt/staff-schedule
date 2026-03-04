@@ -57,16 +57,12 @@ function preloadCharacters() {
 
     const images = Object.values(fullCharacterMap);
 
-    return Promise.all(
-        images.map(src => {
-            return new Promise(resolve => {
-                const img = new Image();
-                img.src = src;
-                img.onload = resolve;
-                img.onerror = resolve;
-            });
-        })
-    );
+    const lazyImages = images.slice(6); // mulai dari karakter ke-7
+
+    lazyImages.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
 
 }
 /**
@@ -146,7 +142,7 @@ function renderStaffGrid() {
             <div class="staff-card ${roleClass}" data-staff-id="${staff.id}">
                 <div class="staff-card-content">
                     <div class="staff-avatar">
-                        <img src="${fullCharacterMap[staff.name] || staff.avatar}" alt="${staff.name}">
+                        <img src="${fullCharacterMap[staff.name]}" alt="${staff.name}" loading="lazy" decoding="async">
                     </div>
                     <div class="staff-name">${staff.name}</div>
                     <span class="staff-role ${roleClass}">${roleText}</span>
