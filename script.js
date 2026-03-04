@@ -19,9 +19,9 @@ const calendarGrid = document.getElementById('calendarGrid');
 // FULL CHARACTER MAP
 const fullCharacterMap = {
     "ACIN": "assets/characters/acin.webp",
-    "HERMAN": "assets/characters/herman.png",
-    "DAVID": "assets/characters/david.png",
-    "HARI": "assets/characters/hari.png",
+    "HERMAN": "assets/characters/herman.webp",
+    "DAVID": "assets/characters/david.webp",
+    "HARI": "assets/characters/hari.webp",
     "BUDI": "assets/characters/budi.png",
     "DEA VALDA": "assets/characters/dea.png",
     "HADAD": "assets/characters/hadad.png",
