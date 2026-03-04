@@ -27,12 +27,12 @@ const fullCharacterMap = {
     "HADAD": "assets/characters/hadad.webp",
     "HEWIN": "assets/characters/hewin.webp",
     "LISTANI": "assets/characters/listani.webp",
-    "WILLY MEDAN": "assets/characters/wilmed.png",
-    "WILLY PONTIANAK": "assets/characters/wilpon.png",
+    "WILLY MEDAN": "assets/characters/wilmed.webp",
+    "WILLY PONTIANAK": "assets/characters/wilpon.webp",
     "NIBRAS": "assets/characters/nibras.webp",
-    "RIAN": "assets/characters/rian.png",
-    "WENDI": "assets/characters/wendi.png",
-    "RIANTO": "assets/characters/rianto.png"
+    "RIAN": "assets/characters/rian.webp",
+    "WENDI": "assets/characters/wendi.webp",
+    "RIANTO": "assets/characters/rianto.webp"
 };
 
 const characterVideoMap = {
