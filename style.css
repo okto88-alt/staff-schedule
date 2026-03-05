@@ -1400,3 +1400,39 @@ body {
 #modalCharacterVideo{
     transform: translate(-20px, 40px);
 }
+
+body{
+background:
+linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
+url("grid-bg.jpg");
+background-size:cover;
+background-position:center;
+}
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+backdrop-filter:blur(4px);
+pointer-events:none;
+}
+
+.panel{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:20px;
+}
+
+body::after{
+content:"";
+position:fixed;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#00ff8840,transparent 70%);
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+filter:blur(120px);
+pointer-events:none;
+}
