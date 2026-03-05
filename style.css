@@ -1522,3 +1522,8 @@ background:#3b82f6;
 .shift-off{
 background:#cbd5e1;
 }
+
+.modal-body{
+flex:1;
+overflow-y:auto;
+}
