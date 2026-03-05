@@ -585,8 +585,8 @@ body {
     border-radius: var(--radius-xl);
     width: 100%;
     max-width: 1000px;
-    max-height: 90vh;
-    overflow-y: auto;
+    max-height: 85vh;
+    overflow:hidden;
     position: relative;
     transform: scale(0.95) translateY(10px);
     transition: all var(--transition-slow);
