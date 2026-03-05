@@ -1528,29 +1528,3 @@ flex:1;
 overflow-y:auto;
 }
 
-.staff-role{
-display:inline-flex;
-align-items:center;
-gap:6px;
-padding:6px 14px;
-border-radius:20px;
-font-size:12px;
-font-weight:600;
-backdrop-filter: blur(10px);
-}
-
-.role-leader{
-background:linear-gradient(135deg,#7b5cff,#9b7bff);
-color:white;
-box-shadow:0 4px 12px rgba(123,92,255,.4);
-}
-
-.role-assistant{
-background:linear-gradient(135deg,#00bcd4,#80deea);
-color:#083b44;
-}
-
-.role-staff{
-background:#e9ecef;
-color:#555;
-}
