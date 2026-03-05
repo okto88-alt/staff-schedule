@@ -49,6 +49,7 @@ const characterVideoMap = {
     "WILLY MEDAN": "assets/characters/video/wilmed_idle.webm",
     "WENDI": "assets/characters/video/wendi_idle.webm",
     "RIAN": "assets/characters/video/rian_idle.webm",
+    "RIANTO": "assets/characters/video/rianto_idle.webm",
     "HEWIN": "assets/characters/video/hewin_idle.webm"
 };
 
