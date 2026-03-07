@@ -4,6 +4,7 @@
 
 // State
 let scheduleData = null;
+let activeVideo = null;
 
 // DOM Elements
 const staffGrid = document.getElementById('staffGrid');
@@ -228,17 +229,25 @@ function openScheduleModal(staffId) {
 fullImg.classList.remove("loaded");
 
 if(characterVideoMap[staff.name]){
+
+    // unload video sebelumnya
+    if(activeVideo && activeVideo !== video){
+        activeVideo.pause();
+        activeVideo.removeAttribute("src");
+        activeVideo.load();
+    }
+
     video.src = characterVideoMap[staff.name];
     video.style.display = "block";
     fullImg.style.display = "none";
+
     video.load();
     video.play();
-}else{
-    video.style.display = "none";
-    fullImg.style.display = "block";
-    fullImg.src = fullCharacterMap[staff.name] || staff.avatar;
-}
 
+    activeVideo = video;
+
+}else{
+    
 fullImg.onload = () => {
     fullImg.classList.add("loaded");
 };
