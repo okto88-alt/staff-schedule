@@ -299,3 +299,53 @@ function showError(message) {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+function openCharacterPanel(staffId){
+
+const staff = scheduleData.staff.find(s => s.id === staffId);
+if(!staff) return;
+
+const img = document.getElementById("panelCharacterImage");
+const video = document.getElementById("panelCharacterVideo");
+
+if(characterVideoMap[staff.name]){
+
+video.src = characterVideoMap[staff.name];
+video.style.display = "block";
+img.style.display = "none";
+video.play();
+
+}else{
+
+video.style.display = "none";
+img.style.display = "block";
+img.src = fullCharacterMap[staff.name];
+
+}
+
+document.getElementById("panelName").textContent = staff.name;
+document.getElementById("panelRole").textContent = staff.role;
+
+renderPanelCalendar(staff.schedule);
+
+}
+
+function renderPanelCalendar(schedule){
+
+const grid = document.getElementById("panelCalendar");
+
+grid.innerHTML = schedule.map((shift,index)=>{
+
+const day = index+1;
+const cls = getShiftClass(shift);
+
+return `
+<div class="calendar-day ${cls}">
+<span class="day-number">${day}</span>
+<span class="shift-code">${shift}</span>
+</div>
+`;
+
+}).join("");
+
+}
