@@ -141,6 +141,7 @@ function renderStaffGrid() {
 
         return `
             <div class="staff-card ${roleClass}" data-staff-id="${staff.id}">
+                <div class="spotlight"></div>
                 <div class="staff-card-content">
                     <div class="staff-avatar">
                         <img src="${fullCharacterMap[staff.name]}" alt="${staff.name}" loading="lazy" decoding="async">
@@ -161,23 +162,55 @@ function setupEventListeners() {
 staffGrid.addEventListener('click', (e) => {
     const card = e.target.closest('.staff-card');
     if (card){
+        // Set active state for fighting game selection feel
+        document.querySelectorAll('.staff-card').forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
         animateCharacterFly(card);
         openScheduleModal(card.dataset.staffId);
     }
 });
-    
-    modalClose.addEventListener('click', closeModal);
 
-    scheduleModal.addEventListener('click', (e) => {
-        if (e.target === scheduleModal) closeModal();
-    });
+// Keyboard navigation - fighting game style
+document.addEventListener('keydown', (e) => {
+    const cards = Array.from(document.querySelectorAll('.staff-card'));
+    if (cards.length === 0) return;
 
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && scheduleModal.classList.contains('active')) {
-            closeModal();
-        }
-    });
-}
+    const activeCard = document.querySelector('.staff-card.active');
+    const activeIndex = activeCard ? cards.indexOf(activeCard) : -1;
+
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        const nextIndex = activeIndex < cards.length - 1 ? activeIndex + 1 : 0;
+        cards.forEach(c => c.classList.remove('active'));
+        cards[nextIndex].classList.add('active');
+        cards[nextIndex].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prevIndex = activeIndex > 0 ? activeIndex - 1 : cards.length - 1;
+        cards.forEach(c => c.classList.remove('active'));
+        cards[prevIndex].classList.add('active');
+        cards[prevIndex].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+    } else if (e.key === 'Enter' && activeCard) {
+        e.preventDefault();
+        animateCharacterFly(activeCard);
+        openScheduleModal(activeCard.dataset.staffId);
+    } else if (e.key === 'Escape' && scheduleModal.classList.contains('active')) {
+        closeModal();
+    }
+});
+
+staffGrid.addEventListener('mouseenter', (e) => {
+    const card = e.target.closest('.staff-card');
+    if (card && !document.querySelector('.staff-card.active')) {
+        card.classList.add('active');
+    }
+});
+
+modalClose.addEventListener('click', closeModal);
+
+scheduleModal.addEventListener('click', (e) => {
+    if (e.target === scheduleModal) closeModal();
+});
 
 /**
  * OPEN MODAL
