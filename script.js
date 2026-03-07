@@ -183,12 +183,6 @@ document
 
 });
     
-    modalClose.addEventListener('click', closeModal);
-
-    scheduleModal.addEventListener('click', (e) => {
-        if (e.target === scheduleModal) closeModal();
-    });
-
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && scheduleModal.classList.contains('active')) {
             closeModal();
@@ -232,14 +226,6 @@ function animateCharacterFly(card){
     },450);
 }
     
-/**
- * Close modal
- */
-function closeModal() {
-    scheduleModal.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
 /**
  * Render calendar
  */
