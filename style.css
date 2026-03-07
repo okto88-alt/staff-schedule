@@ -1404,6 +1404,7 @@ body {
 body{
 background:
 linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
+url("grid-bg.jpg");
 background-size:cover;
 background-position:center;
 }
@@ -1495,13 +1496,10 @@ box-shadow:0 4px 12px rgba(99,102,241,0.4);
 }
 
 .schedule-panel{
-
-background:rgba(20,20,30,0.65);
+background:rgba(255,255,255,0.6);
 backdrop-filter:blur(10px);
-
 border-radius:16px;
-border:1px solid rgba(255,255,255,.1);
-
+border:1px solid rgba(255,255,255,.3);
 }
 
 .calendar-day{
@@ -1586,9 +1584,9 @@ align-items:center;
 background:transparent;
 }
 
-.character-panel img,
-#modalCharacterVideo{
-transform:none;
+.info-character img{
+background:transparent;
+mix-blend-mode:multiply;
 }
 
 .staff-card.active{
