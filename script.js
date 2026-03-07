@@ -4,7 +4,6 @@
 
 // State
 let scheduleData = null;
-let activeVideo = null;
 
 // DOM Elements
 const staffGrid = document.getElementById('staffGrid');
@@ -217,7 +216,6 @@ function animateCharacterFly(card){
 }
 
 function openScheduleModal(staffId) {
-
     const staff = scheduleData.staff.find(s => s.id === staffId);
     if (!staff) return;
 
@@ -226,49 +224,31 @@ function openScheduleModal(staffId) {
 
     const fullImg = document.getElementById("modalFullCharacter");
     const video = document.getElementById("modalCharacterVideo");
+    
+fullImg.classList.remove("loaded");
 
-    fullImg.classList.remove("loaded");
+if(characterVideoMap[staff.name]){
+    video.src = characterVideoMap[staff.name];
+    video.style.display = "block";
+    fullImg.style.display = "none";
+    video.load();
+    video.play();
+}else{
+    video.style.display = "none";
+    fullImg.style.display = "block";
+    fullImg.src = fullCharacterMap[staff.name] || staff.avatar;
+}
 
-    // 🎬 VIDEO MODE
-    if(characterVideoMap[staff.name]){
-
-        if(activeVideo && activeVideo !== video){
-            activeVideo.pause();
-            activeVideo.removeAttribute("src");
-            activeVideo.load();
-        }
-
-        video.src = characterVideoMap[staff.name];
-        video.style.display = "block";
-        fullImg.style.display = "none";
-
-        video.load();
-        video.play();
-
-        activeVideo = video;
-
-    }else{
-
-        video.pause();
-        video.style.display = "none";
-
-        fullImg.style.display = "block";
-        fullImg.src = fullCharacterMap[staff.name] || staff.avatar;
-
-    }
-
-    fullImg.onload = () => {
-        fullImg.classList.add("loaded");
-    };
-
+fullImg.onload = () => {
+    fullImg.classList.add("loaded");
+};
+    
     const roleClass = getRoleClass(staff.roleCode);
     const roleText = getRoleText(staff.role, staff.roleCode);
-
     modalRole.className = `role-badge ${roleClass}`;
     modalRole.textContent = roleText;
 
     modalPersonality.textContent = staff.personality;
-
     renderCalendar(staff.schedule);
 
     scheduleModal.classList.add('active');
