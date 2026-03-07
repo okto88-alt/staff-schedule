@@ -1575,3 +1575,33 @@ flex:1;
 .modal-overlay{
 display:none !important;
 }
+
+.info-character{
+flex:0 0 45%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:transparent;
+}
+
+.info-character img{
+background:transparent;
+mix-blend-mode:multiply;
+}
+
+.staff-card.active{
+
+transform:scale(1.2) translateY(-10px);
+z-index:5;
+transition:all .35s ease;
+
+}
+
+/* karakter lain redup */
+
+.staff-grid .staff-card:not(.active){
+
+opacity:0.35;
+transform:scale(.9);
+
+}
