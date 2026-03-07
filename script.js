@@ -159,15 +159,19 @@ function renderStaffGrid() {
 function setupEventListeners() {
 
 staffGrid.addEventListener('click', (e) => {
-    const card = e.target.closest('.staff-card');
-    if (card){
 
-        openCharacterPanel(card.dataset.staffId);
+const card = e.target.closest('.staff-card');
 
-        document.getElementById("characterInfoPanel")
-        .scrollIntoView({ behavior: "smooth" });
+if(card){
 
-    }
+openCharacterPanel(card.dataset.staffId);
+
+document
+.getElementById("characterInfoPanel")
+.scrollIntoView({behavior:"smooth"});
+
+}
+
 });
     
     modalClose.addEventListener('click', closeModal);
@@ -218,47 +222,7 @@ function animateCharacterFly(card){
         clone.remove();
     },450);
 }
-
-function openScheduleModal(staffId) {
-    const staff = scheduleData.staff.find(s => s.id === staffId);
-    if (!staff) return;
-
-    modalAvatar.innerHTML = `<img src="${staff.avatar}" alt="${staff.name}">`;
-    modalName.textContent = staff.name;
-
-    const fullImg = document.getElementById("modalFullCharacter");
-    const video = document.getElementById("modalCharacterVideo");
     
-fullImg.classList.remove("loaded");
-
-if(characterVideoMap[staff.name]){
-    video.src = characterVideoMap[staff.name];
-    video.style.display = "block";
-    fullImg.style.display = "none";
-    video.load();
-    video.play();
-}else{
-    video.style.display = "none";
-    fullImg.style.display = "block";
-    fullImg.src = fullCharacterMap[staff.name] || staff.avatar;
-}
-
-fullImg.onload = () => {
-    fullImg.classList.add("loaded");
-};
-    
-    const roleClass = getRoleClass(staff.roleCode);
-    const roleText = getRoleText(staff.role, staff.roleCode);
-    modalRole.className = `role-badge ${roleClass}`;
-    modalRole.textContent = roleText;
-
-    modalPersonality.textContent = staff.personality;
-    renderCalendar(staff.schedule);
-
-    scheduleModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
 /**
  * Close modal
  */
