@@ -1496,10 +1496,13 @@ box-shadow:0 4px 12px rgba(99,102,241,0.4);
 }
 
 .schedule-panel{
-background:rgba(255,255,255,0.6);
+
+background:rgba(20,20,30,0.65);
 backdrop-filter:blur(10px);
+
 border-radius:16px;
-border:1px solid rgba(255,255,255,.3);
+border:1px solid rgba(255,255,255,.1);
+
 }
 
 .calendar-day{
@@ -1584,9 +1587,9 @@ align-items:center;
 background:transparent;
 }
 
-.info-character img{
-background:transparent;
-mix-blend-mode:multiply;
+.character-panel img,
+#modalCharacterVideo{
+transform:none;
 }
 
 .staff-card.active{
