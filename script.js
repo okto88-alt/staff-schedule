@@ -162,7 +162,7 @@ staffGrid.addEventListener('click', (e) => {
     const card = e.target.closest('.staff-card');
     if (card){
         animateCharacterFly(card);
-        openScheduleModal(card.dataset.staffId);
+        openCharacterPanel(card.dataset.staffId);
     }
 });
     
