@@ -164,8 +164,17 @@ const card = e.target.closest('.staff-card');
 
 if(card){
 
+/* remove active dari semua */
+document.querySelectorAll(".staff-card").forEach(c=>{
+c.classList.remove("active");
+});
+
+/* aktifkan karakter */
+card.classList.add("active");
+
 openCharacterPanel(card.dataset.staffId);
 
+/* scroll ke panel */
 document
 .getElementById("characterInfoPanel")
 .scrollIntoView({behavior:"smooth"});
