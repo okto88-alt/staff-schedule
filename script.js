@@ -161,8 +161,12 @@ function setupEventListeners() {
 staffGrid.addEventListener('click', (e) => {
     const card = e.target.closest('.staff-card');
     if (card){
-        animateCharacterFly(card);
+
         openCharacterPanel(card.dataset.staffId);
+
+        document.getElementById("characterInfoPanel")
+        .scrollIntoView({ behavior: "smooth" });
+
     }
 });
     
