@@ -1404,7 +1404,6 @@ body {
 body{
 background:
 linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
-url("grid-bg.jpg");
 background-size:cover;
 background-position:center;
 }
